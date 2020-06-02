@@ -25,9 +25,13 @@ namespace HMU_Project_App
         public Form1()
         {
             InitializeComponent();
+            ListRules.Add("No smoking in the building.");
+            ListRules.Add("No loud gatherings after 22:00.");
+            ListRules.Add("Garbage bin must be taken out on time.");
         }
         List<string> ListRules = new List<string>();
-        List<string> ListComplaints = new List<string>();
+        private Complaints complaint;
+        List<Complaints> ListComplaints = new List<Complaints>();
 
         string adminPassword = "password";
 
@@ -42,16 +46,26 @@ namespace HMU_Project_App
                 index++;
             }
         }
-        
+        /*The ViewRules method adds the ListRules to the ViewRules listbox */
+        public void ViewRules()
+        {
+            lbViewRules.Items.Clear();
+            int index = 0;
+            foreach (string value in ListRules)
+            {
+                lbViewRules.Items.Add(ListRules[index]);
+                index++;
+            }
+        }
+
         /*The UpdateComplaints method clears and then repopulates the lbComplaints listbox to show updated data.*/
         public void UpdateComplaints()
         {
             lbComplaints.Items.Clear();
-            int index = 0;
-            foreach (string value in ListComplaints)
+
+            foreach (Complaints value in ListComplaints)
             {
-                lbComplaints.Items.Add(ListComplaints[index]);
-                index++;
+                lbComplaints.Items.Add(value.GetComplaintInfo());
             }
         }
         /*The btnAddRule click event reads the rule from the tbRuleContent and adds it to the ListRules. It then calls the
@@ -189,6 +203,25 @@ namespace HMU_Project_App
             {
                 tbCurrentPass.PasswordChar = '*';
                 tbNewPass.PasswordChar = '*';
+            }
+        }
+        /*The BtnAddComplaint_click event reads the input data and adds the object to a list*/
+        private void BtnAddComplaint_Click(object sender, EventArgs e)
+        {
+            if (tbComplaints.Text != "")
+            {
+                string c = tbComplaints.Text;
+                string d = DateTime.Now.ToString();
+
+                complaint = new Complaints(d, c);
+
+                ListComplaints.Add(complaint);
+
+                tbComplaints.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Complaint field is empty. Please write a complaint.");
             }
         }
     }
