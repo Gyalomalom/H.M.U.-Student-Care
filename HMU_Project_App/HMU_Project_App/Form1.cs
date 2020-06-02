@@ -82,7 +82,7 @@ namespace HMU_Project_App
             {
                 MessageBox.Show("Rule field is empty. Please write a rule.");
             }
-            
+
         }
         /*the btnEditRule click event compares the selected rule to the rules already in the list, and when it finds it,
         it replaces the one in the list with a new one in tbRuleContent. It then calls the UpdateRules method to repopulate lbRules*/
@@ -97,7 +97,7 @@ namespace HMU_Project_App
             else
             {
                 string selectedRule = lbRules.Items[selectedRuleIndex].ToString();
-                for(index=0; index<=ListRules.Count-1; index++)
+                for (index = 0; index <= ListRules.Count - 1; index++)
                 {
                     if (selectedRule == ListRules[index])
                     {
@@ -175,7 +175,7 @@ namespace HMU_Project_App
                 {
                     MessageBox.Show("One of your fields was empty. Please make sure you enter your current and intended new password.");
                 }
-                
+
             }
         }
         /*Closes admin panel, opens the Password change panel and sets focus to it*/
@@ -186,11 +186,11 @@ namespace HMU_Project_App
             tabGeneral.SelectedTab = tabGeneral.TabPages["tabPassChange"];
         }
 
-       /* private void cbShowPass_CheckedChanged(object sender, EventArgs e)
-        {
-            
-            
-        }*/
+        /* private void cbShowPass_CheckedChanged(object sender, EventArgs e)
+         {
+
+
+         }*/
         /*Shows password if checked, masks password otherwise*/
         private void cbShowPass_CheckStateChanged(object sender, EventArgs e)
         {
@@ -223,6 +223,16 @@ namespace HMU_Project_App
             {
                 MessageBox.Show("Complaint field is empty. Please write a complaint.");
             }
+        }
+        /*Displays house rules in a listbox*/
+        private void btnViewRules_Click(object sender, EventArgs e)
+        {
+            ViewRules();
+        }
+        /*Hides house rules*/
+        private void btnHideRules_Click(object sender, EventArgs e)
+        {
+                lbViewRules.Items.Clear();
         }
     }
 }

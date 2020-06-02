@@ -30,6 +30,9 @@
         {
             this.tabGeneral = new System.Windows.Forms.TabControl();
             this.tabDashboard = new System.Windows.Forms.TabPage();
+            this.btnHideRules = new System.Windows.Forms.Button();
+            this.btnViewRules = new System.Windows.Forms.Button();
+            this.lbViewRules = new System.Windows.Forms.ListBox();
             this.btnAdmin = new System.Windows.Forms.Button();
             this.tabAdminLogin = new System.Windows.Forms.TabPage();
             this.btnAdminLogin = new System.Windows.Forms.Button();
@@ -54,9 +57,6 @@
             this.btnAddComplaint = new System.Windows.Forms.Button();
             this.tbComplaints = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.lbViewRules = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.tabGeneral.SuspendLayout();
             this.tabDashboard.SuspendLayout();
             this.tabAdminLogin.SuspendLayout();
@@ -82,8 +82,8 @@
             // 
             // tabDashboard
             // 
-            this.tabDashboard.Controls.Add(this.button2);
-            this.tabDashboard.Controls.Add(this.button1);
+            this.tabDashboard.Controls.Add(this.btnHideRules);
+            this.tabDashboard.Controls.Add(this.btnViewRules);
             this.tabDashboard.Controls.Add(this.lbViewRules);
             this.tabDashboard.Controls.Add(this.btnAdmin);
             this.tabDashboard.Location = new System.Drawing.Point(4, 25);
@@ -93,6 +93,35 @@
             this.tabDashboard.TabIndex = 2;
             this.tabDashboard.Text = "Dashboard";
             this.tabDashboard.UseVisualStyleBackColor = true;
+            // 
+            // btnHideRules
+            // 
+            this.btnHideRules.Location = new System.Drawing.Point(170, 427);
+            this.btnHideRules.Name = "btnHideRules";
+            this.btnHideRules.Size = new System.Drawing.Size(128, 49);
+            this.btnHideRules.TabIndex = 3;
+            this.btnHideRules.Text = "Hide Rules";
+            this.btnHideRules.UseVisualStyleBackColor = true;
+            this.btnHideRules.Click += new System.EventHandler(this.btnHideRules_Click);
+            // 
+            // btnViewRules
+            // 
+            this.btnViewRules.Location = new System.Drawing.Point(26, 427);
+            this.btnViewRules.Name = "btnViewRules";
+            this.btnViewRules.Size = new System.Drawing.Size(115, 49);
+            this.btnViewRules.TabIndex = 2;
+            this.btnViewRules.Text = "View Rules";
+            this.btnViewRules.UseVisualStyleBackColor = true;
+            this.btnViewRules.Click += new System.EventHandler(this.btnViewRules_Click);
+            // 
+            // lbViewRules
+            // 
+            this.lbViewRules.FormattingEnabled = true;
+            this.lbViewRules.ItemHeight = 16;
+            this.lbViewRules.Location = new System.Drawing.Point(26, 25);
+            this.lbViewRules.Name = "lbViewRules";
+            this.lbViewRules.Size = new System.Drawing.Size(272, 388);
+            this.lbViewRules.TabIndex = 1;
             // 
             // btnAdmin
             // 
@@ -319,7 +348,7 @@
             this.tabComplaints.Controls.Add(this.tbComplaints);
             this.tabComplaints.Controls.Add(this.label1);
             this.tabComplaints.Location = new System.Drawing.Point(4, 25);
-            this.tabComplaints.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabComplaints.Margin = new System.Windows.Forms.Padding(4);
             this.tabComplaints.Name = "tabComplaints";
             this.tabComplaints.Size = new System.Drawing.Size(1012, 498);
             this.tabComplaints.TabIndex = 4;
@@ -329,7 +358,7 @@
             // btnAddComplaint
             // 
             this.btnAddComplaint.Location = new System.Drawing.Point(329, 107);
-            this.btnAddComplaint.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddComplaint.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddComplaint.Name = "btnAddComplaint";
             this.btnAddComplaint.Size = new System.Drawing.Size(101, 28);
             this.btnAddComplaint.TabIndex = 2;
@@ -340,7 +369,7 @@
             // tbComplaints
             // 
             this.tbComplaints.Location = new System.Drawing.Point(100, 107);
-            this.tbComplaints.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbComplaints.Margin = new System.Windows.Forms.Padding(4);
             this.tbComplaints.Name = "tbComplaints";
             this.tbComplaints.Size = new System.Drawing.Size(164, 22);
             this.tbComplaints.TabIndex = 1;
@@ -354,33 +383,6 @@
             this.label1.Size = new System.Drawing.Size(231, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Please enter your complaint bellow ";
-            // 
-            // lbViewRules
-            // 
-            this.lbViewRules.FormattingEnabled = true;
-            this.lbViewRules.ItemHeight = 16;
-            this.lbViewRules.Location = new System.Drawing.Point(26, 25);
-            this.lbViewRules.Name = "lbViewRules";
-            this.lbViewRules.Size = new System.Drawing.Size(272, 388);
-            this.lbViewRules.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(26, 427);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 49);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "view rules";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(170, 427);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(128, 49);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -434,8 +436,8 @@
         private System.Windows.Forms.Button btnAddComplaint;
         private System.Windows.Forms.TextBox tbComplaints;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnHideRules;
+        private System.Windows.Forms.Button btnViewRules;
         private System.Windows.Forms.ListBox lbViewRules;
     }
 }
