@@ -35,10 +35,12 @@
             this.lbViewRules = new System.Windows.Forms.ListBox();
             this.btnAdmin = new System.Windows.Forms.Button();
             this.tabAdminLogin = new System.Windows.Forms.TabPage();
+            this.btnReturnToDash = new System.Windows.Forms.Button();
             this.btnAdminLogin = new System.Windows.Forms.Button();
             this.lblAdminPass = new System.Windows.Forms.Label();
             this.tbAdminPass = new System.Windows.Forms.TextBox();
             this.tabAdminPanel = new System.Windows.Forms.TabPage();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.btnPassChange = new System.Windows.Forms.Button();
             this.btnReadComplaints = new System.Windows.Forms.Button();
             this.tbRuleContent = new System.Windows.Forms.TextBox();
@@ -47,6 +49,7 @@
             this.lbComplaints = new System.Windows.Forms.ListBox();
             this.lbRules = new System.Windows.Forms.ListBox();
             this.tabPassChange = new System.Windows.Forms.TabPage();
+            this.btnBackToAdmin = new System.Windows.Forms.Button();
             this.cbShowPass = new System.Windows.Forms.CheckBox();
             this.btnSetNewPass = new System.Windows.Forms.Button();
             this.tbNewPass = new System.Windows.Forms.TextBox();
@@ -56,7 +59,8 @@
             this.tabComplaints = new System.Windows.Forms.TabPage();
             this.btnAddComplaint = new System.Windows.Forms.Button();
             this.tbComplaints = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblEnterComplaints = new System.Windows.Forms.Label();
+            this.btnDeleteRule = new System.Windows.Forms.Button();
             this.tabGeneral.SuspendLayout();
             this.tabDashboard.SuspendLayout();
             this.tabAdminLogin.SuspendLayout();
@@ -96,9 +100,9 @@
             // 
             // btnHideRules
             // 
-            this.btnHideRules.Location = new System.Drawing.Point(170, 427);
+            this.btnHideRules.Location = new System.Drawing.Point(175, 427);
             this.btnHideRules.Name = "btnHideRules";
-            this.btnHideRules.Size = new System.Drawing.Size(128, 49);
+            this.btnHideRules.Size = new System.Drawing.Size(123, 49);
             this.btnHideRules.TabIndex = 3;
             this.btnHideRules.Text = "Hide Rules";
             this.btnHideRules.UseVisualStyleBackColor = true;
@@ -108,7 +112,7 @@
             // 
             this.btnViewRules.Location = new System.Drawing.Point(26, 427);
             this.btnViewRules.Name = "btnViewRules";
-            this.btnViewRules.Size = new System.Drawing.Size(115, 49);
+            this.btnViewRules.Size = new System.Drawing.Size(123, 49);
             this.btnViewRules.TabIndex = 2;
             this.btnViewRules.Text = "View Rules";
             this.btnViewRules.UseVisualStyleBackColor = true;
@@ -136,6 +140,7 @@
             // 
             // tabAdminLogin
             // 
+            this.tabAdminLogin.Controls.Add(this.btnReturnToDash);
             this.tabAdminLogin.Controls.Add(this.btnAdminLogin);
             this.tabAdminLogin.Controls.Add(this.lblAdminPass);
             this.tabAdminLogin.Controls.Add(this.tbAdminPass);
@@ -147,6 +152,16 @@
             this.tabAdminLogin.TabIndex = 0;
             this.tabAdminLogin.Text = "Admin log-in";
             this.tabAdminLogin.UseVisualStyleBackColor = true;
+            // 
+            // btnReturnToDash
+            // 
+            this.btnReturnToDash.Location = new System.Drawing.Point(853, 459);
+            this.btnReturnToDash.Name = "btnReturnToDash";
+            this.btnReturnToDash.Size = new System.Drawing.Size(140, 23);
+            this.btnReturnToDash.TabIndex = 4;
+            this.btnReturnToDash.Text = "Back to dashboard";
+            this.btnReturnToDash.UseVisualStyleBackColor = true;
+            this.btnReturnToDash.Click += new System.EventHandler(this.btnReturnToDash_Click);
             // 
             // btnAdminLogin
             // 
@@ -179,6 +194,8 @@
             // 
             // tabAdminPanel
             // 
+            this.tabAdminPanel.Controls.Add(this.btnDeleteRule);
+            this.tabAdminPanel.Controls.Add(this.btnLogOut);
             this.tabAdminPanel.Controls.Add(this.btnPassChange);
             this.tabAdminPanel.Controls.Add(this.btnReadComplaints);
             this.tabAdminPanel.Controls.Add(this.tbRuleContent);
@@ -194,6 +211,16 @@
             this.tabAdminPanel.TabIndex = 1;
             this.tabAdminPanel.Text = "Admin Panel";
             this.tabAdminPanel.UseVisualStyleBackColor = true;
+            // 
+            // btnLogOut
+            // 
+            this.btnLogOut.Location = new System.Drawing.Point(18, 6);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(75, 23);
+            this.btnLogOut.TabIndex = 7;
+            this.btnLogOut.Text = "Log out";
+            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // btnPassChange
             // 
@@ -219,15 +246,15 @@
             // 
             // tbRuleContent
             // 
-            this.tbRuleContent.Location = new System.Drawing.Point(364, 151);
+            this.tbRuleContent.Location = new System.Drawing.Point(233, 151);
             this.tbRuleContent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbRuleContent.Name = "tbRuleContent";
-            this.tbRuleContent.Size = new System.Drawing.Size(233, 22);
+            this.tbRuleContent.Size = new System.Drawing.Size(364, 22);
             this.tbRuleContent.TabIndex = 4;
             // 
             // btnEditRule
             // 
-            this.btnEditRule.Location = new System.Drawing.Point(483, 178);
+            this.btnEditRule.Location = new System.Drawing.Point(350, 179);
             this.btnEditRule.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEditRule.Name = "btnEditRule";
             this.btnEditRule.Size = new System.Drawing.Size(116, 23);
@@ -238,7 +265,7 @@
             // 
             // btnAddRule
             // 
-            this.btnAddRule.Location = new System.Drawing.Point(364, 178);
+            this.btnAddRule.Location = new System.Drawing.Point(233, 179);
             this.btnAddRule.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddRule.Name = "btnAddRule";
             this.btnAddRule.Size = new System.Drawing.Size(111, 23);
@@ -269,6 +296,7 @@
             // 
             // tabPassChange
             // 
+            this.tabPassChange.Controls.Add(this.btnBackToAdmin);
             this.tabPassChange.Controls.Add(this.cbShowPass);
             this.tabPassChange.Controls.Add(this.btnSetNewPass);
             this.tabPassChange.Controls.Add(this.tbNewPass);
@@ -282,6 +310,16 @@
             this.tabPassChange.TabIndex = 3;
             this.tabPassChange.Text = "Change password";
             this.tabPassChange.UseVisualStyleBackColor = true;
+            // 
+            // btnBackToAdmin
+            // 
+            this.btnBackToAdmin.Location = new System.Drawing.Point(21, 469);
+            this.btnBackToAdmin.Name = "btnBackToAdmin";
+            this.btnBackToAdmin.Size = new System.Drawing.Size(152, 23);
+            this.btnBackToAdmin.TabIndex = 6;
+            this.btnBackToAdmin.Text = "Back to admin...";
+            this.btnBackToAdmin.UseVisualStyleBackColor = true;
+            this.btnBackToAdmin.Click += new System.EventHandler(this.btnBackToAdmin_Click);
             // 
             // cbShowPass
             // 
@@ -346,7 +384,7 @@
             // 
             this.tabComplaints.Controls.Add(this.btnAddComplaint);
             this.tabComplaints.Controls.Add(this.tbComplaints);
-            this.tabComplaints.Controls.Add(this.label1);
+            this.tabComplaints.Controls.Add(this.lblEnterComplaints);
             this.tabComplaints.Location = new System.Drawing.Point(4, 25);
             this.tabComplaints.Margin = new System.Windows.Forms.Padding(4);
             this.tabComplaints.Name = "tabComplaints";
@@ -357,7 +395,7 @@
             // 
             // btnAddComplaint
             // 
-            this.btnAddComplaint.Location = new System.Drawing.Point(329, 107);
+            this.btnAddComplaint.Location = new System.Drawing.Point(388, 107);
             this.btnAddComplaint.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddComplaint.Name = "btnAddComplaint";
             this.btnAddComplaint.Size = new System.Drawing.Size(101, 28);
@@ -371,18 +409,29 @@
             this.tbComplaints.Location = new System.Drawing.Point(100, 107);
             this.tbComplaints.Margin = new System.Windows.Forms.Padding(4);
             this.tbComplaints.Name = "tbComplaints";
-            this.tbComplaints.Size = new System.Drawing.Size(164, 22);
+            this.tbComplaints.Size = new System.Drawing.Size(228, 22);
             this.tbComplaints.TabIndex = 1;
             // 
-            // label1
+            // lblEnterComplaints
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(96, 39);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(231, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Please enter your complaint bellow ";
+            this.lblEnterComplaints.AutoSize = true;
+            this.lblEnterComplaints.Location = new System.Drawing.Point(97, 72);
+            this.lblEnterComplaints.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEnterComplaints.Name = "lblEnterComplaints";
+            this.lblEnterComplaints.Size = new System.Drawing.Size(235, 17);
+            this.lblEnterComplaints.TabIndex = 0;
+            this.lblEnterComplaints.Text = "Please enter your complaint bellow: ";
+            this.lblEnterComplaints.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // btnDeleteRule
+            // 
+            this.btnDeleteRule.Location = new System.Drawing.Point(472, 179);
+            this.btnDeleteRule.Name = "btnDeleteRule";
+            this.btnDeleteRule.Size = new System.Drawing.Size(125, 23);
+            this.btnDeleteRule.TabIndex = 8;
+            this.btnDeleteRule.Text = "Delete rule";
+            this.btnDeleteRule.UseVisualStyleBackColor = true;
+            this.btnDeleteRule.Click += new System.EventHandler(this.btnDeleteRule_Click);
             // 
             // Form1
             // 
@@ -435,10 +484,14 @@
         private System.Windows.Forms.TabPage tabComplaints;
         private System.Windows.Forms.Button btnAddComplaint;
         private System.Windows.Forms.TextBox tbComplaints;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblEnterComplaints;
         private System.Windows.Forms.Button btnHideRules;
         private System.Windows.Forms.Button btnViewRules;
         private System.Windows.Forms.ListBox lbViewRules;
+        private System.Windows.Forms.Button btnReturnToDash;
+        private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.Button btnBackToAdmin;
+        private System.Windows.Forms.Button btnDeleteRule;
     }
 }
 

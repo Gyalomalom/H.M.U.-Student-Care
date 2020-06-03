@@ -68,6 +68,16 @@ namespace HMU_Project_App
                 lbComplaints.Items.Add(value.GetComplaintInfo());
             }
         }
+
+        /*The ResetAdminParamaters method resets all textboxes, passwords, checkbox statuses and unsubmitted rules from the admin panel*/
+        public void ResetAdminParameters ()
+        {
+            tbRuleContent.Text = "";
+            tbCurrentPass.Text = "";
+            tbNewPass.Text = "";
+            cbShowPass.Checked = false;
+            tbAdminPass.Text = "";
+        }
         /*The btnAddRule click event reads the rule from the tbRuleContent and adds it to the ListRules. It then calls the
          * UpdateRules method to re-populate lbRules.*/
         private void btnAddRule_Click(object sender, EventArgs e)
@@ -94,7 +104,7 @@ namespace HMU_Project_App
             {
                 MessageBox.Show("Please select a rule.");
             }
-            else
+            else if (!String.IsNullOrWhiteSpace(tbRuleContent.Text)) //check if field is empty
             {
                 string selectedRule = lbRules.Items[selectedRuleIndex].ToString();
                 for (index = 0; index <= ListRules.Count - 1; index++)
@@ -105,6 +115,10 @@ namespace HMU_Project_App
                     }
                 }
 
+            }
+            else
+            {
+                MessageBox.Show("Error: trying to replace existing rule without giving a value for the new rule. Please enter a new rule to replace the existing one with. If you wish to delete a rule, please use the 'Delete Rule' button.");
             }
             UpdateRules();
             tbRuleContent.Text = "";
@@ -130,6 +144,7 @@ namespace HMU_Project_App
                 tabGeneral.TabPages.Add(tabAdminPanel);
                 tbAdminPass.Text = "";
                 tabGeneral.SelectedTab = tabGeneral.TabPages["tabAdminPanel"];
+                UpdateRules();
                 tabGeneral.TabPages.Remove(tabAdminLogin);
             }
             else if (tbAdminPass.Text == "")
@@ -160,7 +175,7 @@ namespace HMU_Project_App
                     tbCurrentPass.Text = "";
                     tbNewPass.Text = "";
                 }
-                else if ((tbCurrentPass.Text != "") && (tbNewPass.Text != ""))
+                else if ((!String.IsNullOrWhiteSpace(tbCurrentPass.Text)) && (!String.IsNullOrWhiteSpace(tbNewPass.Text)))
                 {
                     adminPassword = tbNewPass.Text;
                     MessageBox.Show("Password changed successfully. Please log in again.");
@@ -176,6 +191,11 @@ namespace HMU_Project_App
                     MessageBox.Show("One of your fields was empty. Please make sure you enter your current and intended new password.");
                 }
 
+            }
+            else
+            {
+                MessageBox.Show("You've entered the wrong value for your current password. Please try again.");
+                ResetAdminParameters();
             }
         }
         /*Closes admin panel, opens the Password change panel and sets focus to it*/
@@ -233,6 +253,54 @@ namespace HMU_Project_App
         private void btnHideRules_Click(object sender, EventArgs e)
         {
                 lbViewRules.Items.Clear();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+        /*Following method removes the Admin Panel tab and calls the ResetAdminParameters method*/
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            tabGeneral.TabPages.Remove(tabAdminPanel);
+            ResetAdminParameters();
+        }
+        /*Following method removes the Admin Panel tab and calls the ResetAdminParameters method*/
+        private void btnReturnToDash_Click(object sender, EventArgs e)
+        {
+            tabGeneral.TabPages.Remove(tabAdminLogin);
+            ResetAdminParameters();
+        }
+
+        private void btnBackToAdmin_Click(object sender, EventArgs e)
+        {
+            tabGeneral.TabPages.Remove(tabPassChange);
+            tabGeneral.TabPages.Add(tabAdminPanel);
+            tabGeneral.SelectedTab = tabGeneral.TabPages["tabAdminPanel"];
+            ResetAdminParameters();
+        }
+
+        private void btnDeleteRule_Click(object sender, EventArgs e)
+        {
+            int index = 0;
+            int selectedRuleIndex = lbRules.SelectedIndex;
+            if (selectedRuleIndex < 0)
+            {
+                MessageBox.Show("Please select a rule.");
+            }
+            else
+            {
+                string selectedRule = lbRules.Items[selectedRuleIndex].ToString();
+                for (index = 0; index <= ListRules.Count - 1; index++)
+                {
+                    if (selectedRule == ListRules[index])
+                    {
+                        ListRules.RemoveAt(index);
+                    }
+                }
+
+            }
+            UpdateRules();
         }
     }
 }
