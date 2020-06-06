@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabGeneral = new System.Windows.Forms.TabControl();
             this.tabDashboard = new System.Windows.Forms.TabPage();
             this.btnHideRules = new System.Windows.Forms.Button();
@@ -89,6 +90,12 @@
             this.lblTotalPrice = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lbShoppingList = new System.Windows.Forms.ListBox();
+            this.pnlGarbage = new System.Windows.Forms.Panel();
+            this.lblGarbage = new System.Windows.Forms.Label();
+            this.lblTemp = new System.Windows.Forms.Label();
+            this.timerTempAndLight = new System.Windows.Forms.Timer(this.components);
+            this.TempAndLightPort = new System.IO.Ports.SerialPort(this.components);
+            this.lblTemperature = new System.Windows.Forms.Label();
             this.tabGeneral.SuspendLayout();
             this.tabDashboard.SuspendLayout();
             this.tabAdminLogin.SuspendLayout();
@@ -98,6 +105,7 @@
             this.tabShoppingList.SuspendLayout();
             this.bgEdit.SuspendLayout();
             this.bgList.SuspendLayout();
+            this.pnlGarbage.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabGeneral
@@ -118,6 +126,9 @@
             // 
             // tabDashboard
             // 
+            this.tabDashboard.Controls.Add(this.lblTemperature);
+            this.tabDashboard.Controls.Add(this.lblTemp);
+            this.tabDashboard.Controls.Add(this.pnlGarbage);
             this.tabDashboard.Controls.Add(this.btnHideRules);
             this.tabDashboard.Controls.Add(this.btnViewRules);
             this.tabDashboard.Controls.Add(this.lbViewRules);
@@ -768,6 +779,49 @@
             this.lbShoppingList.Size = new System.Drawing.Size(293, 260);
             this.lbShoppingList.TabIndex = 0;
             // 
+            // pnlGarbage
+            // 
+            this.pnlGarbage.Controls.Add(this.lblGarbage);
+            this.pnlGarbage.Location = new System.Drawing.Point(719, 274);
+            this.pnlGarbage.Name = "pnlGarbage";
+            this.pnlGarbage.Size = new System.Drawing.Size(287, 73);
+            this.pnlGarbage.TabIndex = 4;
+            this.pnlGarbage.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlGarbage_Paint);
+            // 
+            // lblGarbage
+            // 
+            this.lblGarbage.AutoSize = true;
+            this.lblGarbage.Location = new System.Drawing.Point(23, 30);
+            this.lblGarbage.Name = "lblGarbage";
+            this.lblGarbage.Size = new System.Drawing.Size(0, 17);
+            this.lblGarbage.TabIndex = 5;
+            // 
+            // lblTemp
+            // 
+            this.lblTemp.AutoSize = true;
+            this.lblTemp.Location = new System.Drawing.Point(825, 380);
+            this.lblTemp.Name = "lblTemp";
+            this.lblTemp.Size = new System.Drawing.Size(0, 17);
+            this.lblTemp.TabIndex = 5;
+            // 
+            // timerTempAndLight
+            // 
+            this.timerTempAndLight.Enabled = true;
+            this.timerTempAndLight.Tick += new System.EventHandler(this.timerTempAndLight_Tick);
+            // 
+            // TempAndLightPort
+            // 
+            this.TempAndLightPort.PortName = "COM5";
+            // 
+            // lblTemperature
+            // 
+            this.lblTemperature.AutoSize = true;
+            this.lblTemperature.Location = new System.Drawing.Point(716, 364);
+            this.lblTemperature.Name = "lblTemperature";
+            this.lblTemperature.Size = new System.Drawing.Size(46, 17);
+            this.lblTemperature.TabIndex = 6;
+            this.lblTemperature.Text = "label1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -780,6 +834,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabGeneral.ResumeLayout(false);
             this.tabDashboard.ResumeLayout(false);
+            this.tabDashboard.PerformLayout();
             this.tabAdminLogin.ResumeLayout(false);
             this.tabAdminLogin.PerformLayout();
             this.tabAdminPanel.ResumeLayout(false);
@@ -793,6 +848,8 @@
             this.bgEdit.PerformLayout();
             this.bgList.ResumeLayout(false);
             this.bgList.PerformLayout();
+            this.pnlGarbage.ResumeLayout(false);
+            this.pnlGarbage.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -860,6 +917,12 @@
         private System.Windows.Forms.Label lblTotalPrice;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.ListBox lbShoppingList;
+        private System.Windows.Forms.Label lblTemp;
+        private System.Windows.Forms.Panel pnlGarbage;
+        private System.Windows.Forms.Label lblGarbage;
+        private System.Windows.Forms.Timer timerTempAndLight;
+        private System.IO.Ports.SerialPort TempAndLightPort;
+        private System.Windows.Forms.Label lblTemperature;
     }
 }
 

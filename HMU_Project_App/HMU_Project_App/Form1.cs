@@ -140,6 +140,7 @@ namespace HMU_Project_App
             tabGeneral.TabPages.Remove(tabAdminLogin);
             tabGeneral.TabPages.Remove(tabAdminPanel);
             tabGeneral.TabPages.Remove(tabPassChange);
+            TempAndLightPort.Open();
         }
         /*the following section pertains to the shopping list feature*/
 
@@ -565,6 +566,42 @@ namespace HMU_Project_App
             {
                 ShowCateg();
             }
+        }
+
+        private void timerTempAndLight_Tick(object sender, EventArgs e)
+        {
+            if (TempAndLightPort.BytesToRead > 0)
+            {
+                string message = TempAndLightPort.ReadLine();
+                message = message.Trim();
+                float RealTemp;
+
+                if (float.TryParse(message, out RealTemp))//see if message is float (only temperature can be converted to int)
+                {
+                    lblTemperature.Text = "The temperature is currently: " + RealTemp + "°C";
+                }
+                switch (message) //filter message for strings
+                {
+                    case "LIGHT_DETECTED":
+                        {
+                            pnlGarbage.BackColor = Color.PaleGreen;
+                            lblGarbage.Text = "Garbage has been set out!";
+
+                        }
+                        break;
+                    case "NO_LIGHT_DETECTED":
+                        {
+                            pnlGarbage.BackColor = Color.Yellow;
+                            lblGarbage.Text = "Garbage is not set out yet.";
+                        }
+                        break;
+                }
+            }
+        }
+
+        private void pnlGarbage_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
