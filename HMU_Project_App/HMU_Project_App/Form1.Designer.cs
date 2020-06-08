@@ -38,7 +38,6 @@
             this.btnHideRules = new System.Windows.Forms.Button();
             this.btnViewRules = new System.Windows.Forms.Button();
             this.lbViewRules = new System.Windows.Forms.ListBox();
-            this.btnAdmin = new System.Windows.Forms.Button();
             this.tabAdminLogin = new System.Windows.Forms.TabPage();
             this.btnReturnToDash = new System.Windows.Forms.Button();
             this.btnAdminLogin = new System.Windows.Forms.Button();
@@ -94,8 +93,6 @@
             this.lblTotalPrice = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lbShoppingList = new System.Windows.Forms.ListBox();
-            this.timerTempAndLight = new System.Windows.Forms.Timer(this.components);
-            this.TempAndLightPort = new System.IO.Ports.SerialPort(this.components);
             this.tabAgreements = new System.Windows.Forms.TabPage();
             this.gbAddAgreement = new System.Windows.Forms.GroupBox();
             this.btnRemoveAgreement = new System.Windows.Forms.Button();
@@ -104,9 +101,29 @@
             this.btnAddAgreement = new System.Windows.Forms.Button();
             this.tbAgreementInfo = new System.Windows.Forms.TextBox();
             this.gbViewAgreements = new System.Windows.Forms.GroupBox();
+            this.btnShowAcceptedAgreement = new System.Windows.Forms.Button();
             this.btnShowAllAgreements = new System.Windows.Forms.Button();
             this.lbAgreements = new System.Windows.Forms.ListBox();
-            this.btnShowAcceptedAgreement = new System.Windows.Forms.Button();
+            this.timerTempAndLight = new System.Windows.Forms.Timer(this.components);
+            this.TempAndLightPort = new System.IO.Ports.SerialPort(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.Navigation = new System.Windows.Forms.Panel();
+            this.btnSchedule = new System.Windows.Forms.Button();
+            this.btnShoppingList = new System.Windows.Forms.Button();
+            this.btnAgreements = new System.Windows.Forms.Button();
+            this.btnComplaints = new System.Windows.Forms.Button();
+            this.btnDashboard = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.btnAdmin = new System.Windows.Forms.Button();
+            this.adminTab1 = new HMU_Project_App.AdminTab();
+            this.loginTab1 = new HMU_Project_App.LoginTab();
+            this.shoppingListTab1 = new HMU_Project_App.ShoppingListTab();
+            this.agreementsTab1 = new HMU_Project_App.AgreementsTab();
+            this.complaintsTab1 = new HMU_Project_App.ComplaintsTab();
+            this.dashboard1 = new HMU_Project_App.Dashboard();
             this.tabGeneral.SuspendLayout();
             this.tabDashboard.SuspendLayout();
             this.pnlGarbage.SuspendLayout();
@@ -120,6 +137,8 @@
             this.tabAgreements.SuspendLayout();
             this.gbAddAgreement.SuspendLayout();
             this.gbViewAgreements.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabGeneral
@@ -131,11 +150,11 @@
             this.tabGeneral.Controls.Add(this.tabComplaints);
             this.tabGeneral.Controls.Add(this.tabShoppingList);
             this.tabGeneral.Controls.Add(this.tabAgreements);
-            this.tabGeneral.Location = new System.Drawing.Point(224, 0);
-            this.tabGeneral.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabGeneral.Location = new System.Drawing.Point(316, 391);
+            this.tabGeneral.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabGeneral.Name = "tabGeneral";
             this.tabGeneral.SelectedIndex = 0;
-            this.tabGeneral.Size = new System.Drawing.Size(765, 428);
+            this.tabGeneral.Size = new System.Drawing.Size(1111, 512);
             this.tabGeneral.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabGeneral.TabIndex = 0;
             // 
@@ -147,59 +166,57 @@
             this.tabDashboard.Controls.Add(this.btnHideRules);
             this.tabDashboard.Controls.Add(this.btnViewRules);
             this.tabDashboard.Controls.Add(this.lbViewRules);
-            this.tabDashboard.Controls.Add(this.btnAdmin);
-            this.tabDashboard.Location = new System.Drawing.Point(4, 22);
-            this.tabDashboard.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabDashboard.Location = new System.Drawing.Point(4, 25);
+            this.tabDashboard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabDashboard.Name = "tabDashboard";
-            this.tabDashboard.Size = new System.Drawing.Size(757, 402);
+            this.tabDashboard.Size = new System.Drawing.Size(1103, 483);
             this.tabDashboard.TabIndex = 2;
             this.tabDashboard.Text = "Dashboard";
             this.tabDashboard.UseVisualStyleBackColor = true;
+            this.tabDashboard.Click += new System.EventHandler(this.TabDashboard_Click);
             // 
             // lblTemperature
             // 
             this.lblTemperature.AutoSize = true;
-            this.lblTemperature.Location = new System.Drawing.Point(537, 296);
-            this.lblTemperature.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTemperature.Location = new System.Drawing.Point(509, 339);
             this.lblTemperature.Name = "lblTemperature";
-            this.lblTemperature.Size = new System.Drawing.Size(35, 13);
+            this.lblTemperature.Size = new System.Drawing.Size(46, 17);
             this.lblTemperature.TabIndex = 6;
             this.lblTemperature.Text = "label1";
+            this.lblTemperature.Click += new System.EventHandler(this.LblTemperature_Click);
             // 
             // lblTemp
             // 
             this.lblTemp.AutoSize = true;
-            this.lblTemp.Location = new System.Drawing.Point(619, 309);
-            this.lblTemp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTemp.Location = new System.Drawing.Point(825, 380);
             this.lblTemp.Name = "lblTemp";
-            this.lblTemp.Size = new System.Drawing.Size(0, 13);
+            this.lblTemp.Size = new System.Drawing.Size(0, 17);
             this.lblTemp.TabIndex = 5;
             // 
             // pnlGarbage
             // 
             this.pnlGarbage.Controls.Add(this.lblGarbage);
-            this.pnlGarbage.Location = new System.Drawing.Point(539, 223);
-            this.pnlGarbage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlGarbage.Location = new System.Drawing.Point(486, 231);
+            this.pnlGarbage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlGarbage.Name = "pnlGarbage";
-            this.pnlGarbage.Size = new System.Drawing.Size(215, 59);
+            this.pnlGarbage.Size = new System.Drawing.Size(287, 73);
             this.pnlGarbage.TabIndex = 4;
             this.pnlGarbage.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlGarbage_Paint);
             // 
             // lblGarbage
             // 
             this.lblGarbage.AutoSize = true;
-            this.lblGarbage.Location = new System.Drawing.Point(17, 24);
-            this.lblGarbage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblGarbage.Location = new System.Drawing.Point(23, 30);
             this.lblGarbage.Name = "lblGarbage";
-            this.lblGarbage.Size = new System.Drawing.Size(0, 13);
+            this.lblGarbage.Size = new System.Drawing.Size(0, 17);
             this.lblGarbage.TabIndex = 5;
             // 
             // btnHideRules
             // 
-            this.btnHideRules.Location = new System.Drawing.Point(131, 347);
-            this.btnHideRules.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHideRules.Location = new System.Drawing.Point(175, 427);
+            this.btnHideRules.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHideRules.Name = "btnHideRules";
-            this.btnHideRules.Size = new System.Drawing.Size(92, 40);
+            this.btnHideRules.Size = new System.Drawing.Size(123, 49);
             this.btnHideRules.TabIndex = 3;
             this.btnHideRules.Text = "Hide Rules";
             this.btnHideRules.UseVisualStyleBackColor = true;
@@ -207,10 +224,10 @@
             // 
             // btnViewRules
             // 
-            this.btnViewRules.Location = new System.Drawing.Point(20, 347);
-            this.btnViewRules.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnViewRules.Location = new System.Drawing.Point(27, 427);
+            this.btnViewRules.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnViewRules.Name = "btnViewRules";
-            this.btnViewRules.Size = new System.Drawing.Size(92, 40);
+            this.btnViewRules.Size = new System.Drawing.Size(123, 49);
             this.btnViewRules.TabIndex = 2;
             this.btnViewRules.Text = "View Rules";
             this.btnViewRules.UseVisualStyleBackColor = true;
@@ -219,22 +236,12 @@
             // lbViewRules
             // 
             this.lbViewRules.FormattingEnabled = true;
-            this.lbViewRules.Location = new System.Drawing.Point(20, 20);
-            this.lbViewRules.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbViewRules.ItemHeight = 16;
+            this.lbViewRules.Location = new System.Drawing.Point(27, 25);
+            this.lbViewRules.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbViewRules.Name = "lbViewRules";
-            this.lbViewRules.Size = new System.Drawing.Size(205, 316);
+            this.lbViewRules.Size = new System.Drawing.Size(272, 388);
             this.lbViewRules.TabIndex = 1;
-            // 
-            // btnAdmin
-            // 
-            this.btnAdmin.Location = new System.Drawing.Point(703, 2);
-            this.btnAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(56, 19);
-            this.btnAdmin.TabIndex = 0;
-            this.btnAdmin.Text = "Admin";
-            this.btnAdmin.UseVisualStyleBackColor = true;
-            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
             // tabAdminLogin
             // 
@@ -242,21 +249,21 @@
             this.tabAdminLogin.Controls.Add(this.btnAdminLogin);
             this.tabAdminLogin.Controls.Add(this.lblAdminPass);
             this.tabAdminLogin.Controls.Add(this.tbAdminPass);
-            this.tabAdminLogin.Location = new System.Drawing.Point(4, 22);
-            this.tabAdminLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabAdminLogin.Location = new System.Drawing.Point(4, 25);
+            this.tabAdminLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabAdminLogin.Name = "tabAdminLogin";
-            this.tabAdminLogin.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabAdminLogin.Size = new System.Drawing.Size(757, 402);
+            this.tabAdminLogin.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabAdminLogin.Size = new System.Drawing.Size(1103, 483);
             this.tabAdminLogin.TabIndex = 0;
             this.tabAdminLogin.Text = "Admin log-in";
             this.tabAdminLogin.UseVisualStyleBackColor = true;
             // 
             // btnReturnToDash
             // 
-            this.btnReturnToDash.Location = new System.Drawing.Point(640, 373);
-            this.btnReturnToDash.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReturnToDash.Location = new System.Drawing.Point(853, 459);
+            this.btnReturnToDash.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReturnToDash.Name = "btnReturnToDash";
-            this.btnReturnToDash.Size = new System.Drawing.Size(105, 19);
+            this.btnReturnToDash.Size = new System.Drawing.Size(140, 23);
             this.btnReturnToDash.TabIndex = 4;
             this.btnReturnToDash.Text = "Back to dashboard";
             this.btnReturnToDash.UseVisualStyleBackColor = true;
@@ -264,10 +271,10 @@
             // 
             // btnAdminLogin
             // 
-            this.btnAdminLogin.Location = new System.Drawing.Point(301, 155);
-            this.btnAdminLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdminLogin.Location = new System.Drawing.Point(401, 191);
+            this.btnAdminLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdminLogin.Name = "btnAdminLogin";
-            this.btnAdminLogin.Size = new System.Drawing.Size(94, 29);
+            this.btnAdminLogin.Size = new System.Drawing.Size(125, 36);
             this.btnAdminLogin.TabIndex = 3;
             this.btnAdminLogin.Text = "Log in";
             this.btnAdminLogin.UseVisualStyleBackColor = true;
@@ -276,21 +283,22 @@
             // lblAdminPass
             // 
             this.lblAdminPass.AutoSize = true;
-            this.lblAdminPass.Location = new System.Drawing.Point(301, 116);
-            this.lblAdminPass.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAdminPass.Location = new System.Drawing.Point(401, 143);
             this.lblAdminPass.Name = "lblAdminPass";
-            this.lblAdminPass.Size = new System.Drawing.Size(56, 13);
+            this.lblAdminPass.Size = new System.Drawing.Size(73, 17);
             this.lblAdminPass.TabIndex = 2;
             this.lblAdminPass.Text = "Password:";
+            this.lblAdminPass.Click += new System.EventHandler(this.LblAdminPass_Click);
             // 
             // tbAdminPass
             // 
-            this.tbAdminPass.Location = new System.Drawing.Point(301, 132);
-            this.tbAdminPass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbAdminPass.Location = new System.Drawing.Point(401, 162);
+            this.tbAdminPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbAdminPass.Name = "tbAdminPass";
             this.tbAdminPass.PasswordChar = '*';
-            this.tbAdminPass.Size = new System.Drawing.Size(96, 20);
+            this.tbAdminPass.Size = new System.Drawing.Size(127, 22);
             this.tbAdminPass.TabIndex = 1;
+            this.tbAdminPass.TextChanged += new System.EventHandler(this.TbAdminPass_TextChanged);
             // 
             // tabAdminPanel
             // 
@@ -303,21 +311,21 @@
             this.tabAdminPanel.Controls.Add(this.btnAddRule);
             this.tabAdminPanel.Controls.Add(this.lbComplaints);
             this.tabAdminPanel.Controls.Add(this.lbRules);
-            this.tabAdminPanel.Location = new System.Drawing.Point(4, 22);
-            this.tabAdminPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabAdminPanel.Location = new System.Drawing.Point(4, 25);
+            this.tabAdminPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabAdminPanel.Name = "tabAdminPanel";
-            this.tabAdminPanel.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabAdminPanel.Size = new System.Drawing.Size(757, 402);
+            this.tabAdminPanel.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabAdminPanel.Size = new System.Drawing.Size(1103, 483);
             this.tabAdminPanel.TabIndex = 1;
             this.tabAdminPanel.Text = "Admin Panel";
             this.tabAdminPanel.UseVisualStyleBackColor = true;
             // 
             // btnDeleteRule
             // 
-            this.btnDeleteRule.Location = new System.Drawing.Point(354, 145);
-            this.btnDeleteRule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDeleteRule.Location = new System.Drawing.Point(472, 178);
+            this.btnDeleteRule.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDeleteRule.Name = "btnDeleteRule";
-            this.btnDeleteRule.Size = new System.Drawing.Size(94, 19);
+            this.btnDeleteRule.Size = new System.Drawing.Size(125, 23);
             this.btnDeleteRule.TabIndex = 8;
             this.btnDeleteRule.Text = "Delete rule";
             this.btnDeleteRule.UseVisualStyleBackColor = true;
@@ -325,10 +333,10 @@
             // 
             // btnLogOut
             // 
-            this.btnLogOut.Location = new System.Drawing.Point(14, 5);
-            this.btnLogOut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogOut.Location = new System.Drawing.Point(19, 6);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(56, 19);
+            this.btnLogOut.Size = new System.Drawing.Size(75, 23);
             this.btnLogOut.TabIndex = 7;
             this.btnLogOut.Text = "Log out";
             this.btnLogOut.UseVisualStyleBackColor = true;
@@ -336,10 +344,10 @@
             // 
             // btnPassChange
             // 
-            this.btnPassChange.Location = new System.Drawing.Point(4, 353);
-            this.btnPassChange.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPassChange.Location = new System.Drawing.Point(5, 434);
+            this.btnPassChange.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPassChange.Name = "btnPassChange";
-            this.btnPassChange.Size = new System.Drawing.Size(127, 19);
+            this.btnPassChange.Size = new System.Drawing.Size(169, 23);
             this.btnPassChange.TabIndex = 6;
             this.btnPassChange.Text = "Change password";
             this.btnPassChange.UseVisualStyleBackColor = true;
@@ -347,10 +355,10 @@
             // 
             // btnReadComplaints
             // 
-            this.btnReadComplaints.Location = new System.Drawing.Point(273, 353);
-            this.btnReadComplaints.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReadComplaints.Location = new System.Drawing.Point(364, 434);
+            this.btnReadComplaints.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReadComplaints.Name = "btnReadComplaints";
-            this.btnReadComplaints.Size = new System.Drawing.Size(176, 19);
+            this.btnReadComplaints.Size = new System.Drawing.Size(235, 23);
             this.btnReadComplaints.TabIndex = 5;
             this.btnReadComplaints.Text = "Read Complaints";
             this.btnReadComplaints.UseVisualStyleBackColor = true;
@@ -358,18 +366,18 @@
             // 
             // tbRuleContent
             // 
-            this.tbRuleContent.Location = new System.Drawing.Point(175, 123);
-            this.tbRuleContent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbRuleContent.Location = new System.Drawing.Point(233, 151);
+            this.tbRuleContent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbRuleContent.Name = "tbRuleContent";
-            this.tbRuleContent.Size = new System.Drawing.Size(274, 20);
+            this.tbRuleContent.Size = new System.Drawing.Size(364, 22);
             this.tbRuleContent.TabIndex = 4;
             // 
             // btnEditRule
             // 
-            this.btnEditRule.Location = new System.Drawing.Point(262, 145);
-            this.btnEditRule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditRule.Location = new System.Drawing.Point(349, 178);
+            this.btnEditRule.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEditRule.Name = "btnEditRule";
-            this.btnEditRule.Size = new System.Drawing.Size(87, 19);
+            this.btnEditRule.Size = new System.Drawing.Size(116, 23);
             this.btnEditRule.TabIndex = 3;
             this.btnEditRule.Text = "Replace rule";
             this.btnEditRule.UseVisualStyleBackColor = true;
@@ -377,10 +385,10 @@
             // 
             // btnAddRule
             // 
-            this.btnAddRule.Location = new System.Drawing.Point(175, 145);
-            this.btnAddRule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddRule.Location = new System.Drawing.Point(233, 178);
+            this.btnAddRule.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddRule.Name = "btnAddRule";
-            this.btnAddRule.Size = new System.Drawing.Size(83, 19);
+            this.btnAddRule.Size = new System.Drawing.Size(111, 23);
             this.btnAddRule.TabIndex = 2;
             this.btnAddRule.Text = "Add new rule";
             this.btnAddRule.UseVisualStyleBackColor = true;
@@ -389,19 +397,21 @@
             // lbComplaints
             // 
             this.lbComplaints.FormattingEnabled = true;
-            this.lbComplaints.Location = new System.Drawing.Point(453, 212);
-            this.lbComplaints.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbComplaints.ItemHeight = 16;
+            this.lbComplaints.Location = new System.Drawing.Point(604, 261);
+            this.lbComplaints.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbComplaints.Name = "lbComplaints";
-            this.lbComplaints.Size = new System.Drawing.Size(271, 160);
+            this.lbComplaints.Size = new System.Drawing.Size(360, 196);
             this.lbComplaints.TabIndex = 1;
             // 
             // lbRules
             // 
             this.lbRules.FormattingEnabled = true;
-            this.lbRules.Location = new System.Drawing.Point(453, 18);
-            this.lbRules.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbRules.ItemHeight = 16;
+            this.lbRules.Location = new System.Drawing.Point(604, 22);
+            this.lbRules.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbRules.Name = "lbRules";
-            this.lbRules.Size = new System.Drawing.Size(271, 147);
+            this.lbRules.Size = new System.Drawing.Size(360, 180);
             this.lbRules.TabIndex = 0;
             // 
             // tabPassChange
@@ -413,20 +423,20 @@
             this.tabPassChange.Controls.Add(this.tbCurrentPass);
             this.tabPassChange.Controls.Add(this.lblNewPass);
             this.tabPassChange.Controls.Add(this.lblOldPass);
-            this.tabPassChange.Location = new System.Drawing.Point(4, 22);
-            this.tabPassChange.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPassChange.Location = new System.Drawing.Point(4, 25);
+            this.tabPassChange.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPassChange.Name = "tabPassChange";
-            this.tabPassChange.Size = new System.Drawing.Size(757, 402);
+            this.tabPassChange.Size = new System.Drawing.Size(1103, 483);
             this.tabPassChange.TabIndex = 3;
             this.tabPassChange.Text = "Change password";
             this.tabPassChange.UseVisualStyleBackColor = true;
             // 
             // btnBackToAdmin
             // 
-            this.btnBackToAdmin.Location = new System.Drawing.Point(16, 381);
-            this.btnBackToAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBackToAdmin.Location = new System.Drawing.Point(21, 469);
+            this.btnBackToAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBackToAdmin.Name = "btnBackToAdmin";
-            this.btnBackToAdmin.Size = new System.Drawing.Size(114, 19);
+            this.btnBackToAdmin.Size = new System.Drawing.Size(152, 23);
             this.btnBackToAdmin.TabIndex = 6;
             this.btnBackToAdmin.Text = "Back to admin...";
             this.btnBackToAdmin.UseVisualStyleBackColor = true;
@@ -435,10 +445,10 @@
             // cbShowPass
             // 
             this.cbShowPass.AutoSize = true;
-            this.cbShowPass.Location = new System.Drawing.Point(165, 35);
-            this.cbShowPass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbShowPass.Location = new System.Drawing.Point(220, 43);
+            this.cbShowPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbShowPass.Name = "cbShowPass";
-            this.cbShowPass.Size = new System.Drawing.Size(101, 17);
+            this.cbShowPass.Size = new System.Drawing.Size(128, 21);
             this.cbShowPass.TabIndex = 5;
             this.cbShowPass.Text = "Show password";
             this.cbShowPass.UseVisualStyleBackColor = true;
@@ -446,10 +456,10 @@
             // 
             // btnSetNewPass
             // 
-            this.btnSetNewPass.Location = new System.Drawing.Point(16, 128);
-            this.btnSetNewPass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSetNewPass.Location = new System.Drawing.Point(21, 158);
+            this.btnSetNewPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSetNewPass.Name = "btnSetNewPass";
-            this.btnSetNewPass.Size = new System.Drawing.Size(114, 19);
+            this.btnSetNewPass.Size = new System.Drawing.Size(152, 23);
             this.btnSetNewPass.TabIndex = 4;
             this.btnSetNewPass.Text = "Change password";
             this.btnSetNewPass.UseVisualStyleBackColor = true;
@@ -457,39 +467,37 @@
             // 
             // tbNewPass
             // 
-            this.tbNewPass.Location = new System.Drawing.Point(16, 89);
-            this.tbNewPass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbNewPass.Location = new System.Drawing.Point(21, 110);
+            this.tbNewPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbNewPass.Name = "tbNewPass";
             this.tbNewPass.PasswordChar = '*';
-            this.tbNewPass.Size = new System.Drawing.Size(115, 20);
+            this.tbNewPass.Size = new System.Drawing.Size(152, 22);
             this.tbNewPass.TabIndex = 3;
             // 
             // tbCurrentPass
             // 
-            this.tbCurrentPass.Location = new System.Drawing.Point(16, 35);
-            this.tbCurrentPass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbCurrentPass.Location = new System.Drawing.Point(21, 43);
+            this.tbCurrentPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbCurrentPass.Name = "tbCurrentPass";
             this.tbCurrentPass.PasswordChar = '*';
-            this.tbCurrentPass.Size = new System.Drawing.Size(115, 20);
+            this.tbCurrentPass.Size = new System.Drawing.Size(152, 22);
             this.tbCurrentPass.TabIndex = 2;
             // 
             // lblNewPass
             // 
             this.lblNewPass.AutoSize = true;
-            this.lblNewPass.Location = new System.Drawing.Point(14, 73);
-            this.lblNewPass.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNewPass.Location = new System.Drawing.Point(19, 90);
             this.lblNewPass.Name = "lblNewPass";
-            this.lblNewPass.Size = new System.Drawing.Size(103, 13);
+            this.lblNewPass.Size = new System.Drawing.Size(135, 17);
             this.lblNewPass.TabIndex = 1;
             this.lblNewPass.Text = "Your new password:";
             // 
             // lblOldPass
             // 
             this.lblOldPass.AutoSize = true;
-            this.lblOldPass.Location = new System.Drawing.Point(14, 19);
-            this.lblOldPass.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblOldPass.Location = new System.Drawing.Point(19, 23);
             this.lblOldPass.Name = "lblOldPass";
-            this.lblOldPass.Size = new System.Drawing.Size(116, 13);
+            this.lblOldPass.Size = new System.Drawing.Size(155, 17);
             this.lblOldPass.TabIndex = 0;
             this.lblOldPass.Text = "Your current password:";
             // 
@@ -498,18 +506,20 @@
             this.tabComplaints.Controls.Add(this.btnAddComplaint);
             this.tabComplaints.Controls.Add(this.tbComplaints);
             this.tabComplaints.Controls.Add(this.lblEnterComplaints);
-            this.tabComplaints.Location = new System.Drawing.Point(4, 22);
+            this.tabComplaints.Location = new System.Drawing.Point(4, 25);
+            this.tabComplaints.Margin = new System.Windows.Forms.Padding(4);
             this.tabComplaints.Name = "tabComplaints";
-            this.tabComplaints.Size = new System.Drawing.Size(757, 402);
+            this.tabComplaints.Size = new System.Drawing.Size(1103, 483);
             this.tabComplaints.TabIndex = 4;
             this.tabComplaints.Text = "Complaints";
             this.tabComplaints.UseVisualStyleBackColor = true;
             // 
             // btnAddComplaint
             // 
-            this.btnAddComplaint.Location = new System.Drawing.Point(291, 87);
+            this.btnAddComplaint.Location = new System.Drawing.Point(388, 107);
+            this.btnAddComplaint.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddComplaint.Name = "btnAddComplaint";
-            this.btnAddComplaint.Size = new System.Drawing.Size(76, 23);
+            this.btnAddComplaint.Size = new System.Drawing.Size(101, 28);
             this.btnAddComplaint.TabIndex = 2;
             this.btnAddComplaint.Text = "Add";
             this.btnAddComplaint.UseVisualStyleBackColor = true;
@@ -517,17 +527,20 @@
             // 
             // tbComplaints
             // 
-            this.tbComplaints.Location = new System.Drawing.Point(75, 87);
+            this.tbComplaints.Location = new System.Drawing.Point(100, 107);
+            this.tbComplaints.Margin = new System.Windows.Forms.Padding(4);
             this.tbComplaints.Name = "tbComplaints";
-            this.tbComplaints.Size = new System.Drawing.Size(172, 20);
+            this.tbComplaints.Size = new System.Drawing.Size(228, 22);
             this.tbComplaints.TabIndex = 1;
+            this.tbComplaints.TextChanged += new System.EventHandler(this.TbComplaints_TextChanged);
             // 
             // lblEnterComplaints
             // 
             this.lblEnterComplaints.AutoSize = true;
-            this.lblEnterComplaints.Location = new System.Drawing.Point(73, 58);
+            this.lblEnterComplaints.Location = new System.Drawing.Point(97, 71);
+            this.lblEnterComplaints.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEnterComplaints.Name = "lblEnterComplaints";
-            this.lblEnterComplaints.Size = new System.Drawing.Size(176, 13);
+            this.lblEnterComplaints.Size = new System.Drawing.Size(235, 17);
             this.lblEnterComplaints.TabIndex = 0;
             this.lblEnterComplaints.Text = "Please enter your complaint bellow: ";
             this.lblEnterComplaints.Click += new System.EventHandler(this.label1_Click);
@@ -536,11 +549,11 @@
             // 
             this.tabShoppingList.Controls.Add(this.bgEdit);
             this.tabShoppingList.Controls.Add(this.bgList);
-            this.tabShoppingList.Location = new System.Drawing.Point(4, 22);
-            this.tabShoppingList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabShoppingList.Location = new System.Drawing.Point(4, 25);
+            this.tabShoppingList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabShoppingList.Name = "tabShoppingList";
-            this.tabShoppingList.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabShoppingList.Size = new System.Drawing.Size(757, 402);
+            this.tabShoppingList.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabShoppingList.Size = new System.Drawing.Size(1103, 483);
             this.tabShoppingList.TabIndex = 5;
             this.tabShoppingList.Text = "Shopping list";
             this.tabShoppingList.UseVisualStyleBackColor = true;
@@ -557,21 +570,21 @@
             this.bgEdit.Controls.Add(this.btnAdd);
             this.bgEdit.Controls.Add(this.tbPrice);
             this.bgEdit.Controls.Add(this.tbName);
-            this.bgEdit.Location = new System.Drawing.Point(22, 41);
-            this.bgEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bgEdit.Location = new System.Drawing.Point(29, 50);
+            this.bgEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bgEdit.Name = "bgEdit";
-            this.bgEdit.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.bgEdit.Size = new System.Drawing.Size(242, 317);
+            this.bgEdit.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bgEdit.Size = new System.Drawing.Size(323, 390);
             this.bgEdit.TabIndex = 6;
             this.bgEdit.TabStop = false;
             this.bgEdit.Text = "Edit shopping list";
             // 
             // btnRmvSelected
             // 
-            this.btnRmvSelected.Location = new System.Drawing.Point(104, 141);
-            this.btnRmvSelected.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRmvSelected.Location = new System.Drawing.Point(139, 174);
+            this.btnRmvSelected.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRmvSelected.Name = "btnRmvSelected";
-            this.btnRmvSelected.Size = new System.Drawing.Size(70, 40);
+            this.btnRmvSelected.Size = new System.Drawing.Size(93, 49);
             this.btnRmvSelected.TabIndex = 11;
             this.btnRmvSelected.Text = "Remove selected";
             this.btnRmvSelected.UseVisualStyleBackColor = true;
@@ -580,10 +593,9 @@
             // lblCateg
             // 
             this.lblCateg.AutoSize = true;
-            this.lblCateg.Location = new System.Drawing.Point(19, 106);
-            this.lblCateg.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCateg.Location = new System.Drawing.Point(25, 130);
             this.lblCateg.Name = "lblCateg";
-            this.lblCateg.Size = new System.Drawing.Size(49, 13);
+            this.lblCateg.Size = new System.Drawing.Size(65, 17);
             this.lblCateg.TabIndex = 10;
             this.lblCateg.Text = "Category";
             // 
@@ -597,38 +609,36 @@
             "Vegetable",
             "Breads",
             "Other"});
-            this.cbCategory.Location = new System.Drawing.Point(99, 101);
-            this.cbCategory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbCategory.Location = new System.Drawing.Point(132, 124);
+            this.cbCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(76, 21);
+            this.cbCategory.Size = new System.Drawing.Size(100, 24);
             this.cbCategory.TabIndex = 9;
             // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(19, 68);
-            this.lblPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPrice.Location = new System.Drawing.Point(25, 84);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(53, 13);
+            this.lblPrice.Size = new System.Drawing.Size(69, 17);
             this.lblPrice.TabIndex = 8;
             this.lblPrice.Text = "Item price";
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(19, 36);
-            this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblName.Location = new System.Drawing.Point(25, 44);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(56, 13);
+            this.lblName.Size = new System.Drawing.Size(73, 17);
             this.lblName.TabIndex = 7;
             this.lblName.Text = "Item name";
             // 
             // btnRemove
             // 
-            this.btnRemove.Location = new System.Drawing.Point(21, 186);
-            this.btnRemove.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRemove.Location = new System.Drawing.Point(28, 229);
+            this.btnRemove.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(70, 40);
+            this.btnRemove.Size = new System.Drawing.Size(93, 49);
             this.btnRemove.TabIndex = 6;
             this.btnRemove.Text = "Remove item";
             this.btnRemove.UseVisualStyleBackColor = true;
@@ -636,10 +646,10 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(21, 141);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Location = new System.Drawing.Point(28, 174);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(70, 40);
+            this.btnAdd.Size = new System.Drawing.Size(93, 49);
             this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "Add item";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -647,18 +657,18 @@
             // 
             // tbPrice
             // 
-            this.tbPrice.Location = new System.Drawing.Point(99, 68);
-            this.tbPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbPrice.Location = new System.Drawing.Point(132, 84);
+            this.tbPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbPrice.Name = "tbPrice";
-            this.tbPrice.Size = new System.Drawing.Size(76, 20);
+            this.tbPrice.Size = new System.Drawing.Size(100, 22);
             this.tbPrice.TabIndex = 3;
             // 
             // tbName
             // 
-            this.tbName.Location = new System.Drawing.Point(99, 36);
-            this.tbName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbName.Location = new System.Drawing.Point(132, 44);
+            this.tbName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(76, 20);
+            this.tbName.Size = new System.Drawing.Size(100, 22);
             this.tbName.TabIndex = 2;
             // 
             // bgList
@@ -679,11 +689,11 @@
             this.bgList.Controls.Add(this.lblTotalPrice);
             this.bgList.Controls.Add(this.lblTotal);
             this.bgList.Controls.Add(this.lbShoppingList);
-            this.bgList.Location = new System.Drawing.Point(284, 41);
-            this.bgList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bgList.Location = new System.Drawing.Point(379, 50);
+            this.bgList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bgList.Name = "bgList";
-            this.bgList.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.bgList.Size = new System.Drawing.Size(433, 317);
+            this.bgList.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bgList.Size = new System.Drawing.Size(577, 390);
             this.bgList.TabIndex = 5;
             this.bgList.TabStop = false;
             this.bgList.Text = "Shopping List";
@@ -691,10 +701,10 @@
             // rbCategory
             // 
             this.rbCategory.AutoSize = true;
-            this.rbCategory.Location = new System.Drawing.Point(286, 110);
-            this.rbCategory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbCategory.Location = new System.Drawing.Point(381, 135);
+            this.rbCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rbCategory.Name = "rbCategory";
-            this.rbCategory.Size = new System.Drawing.Size(67, 17);
+            this.rbCategory.Size = new System.Drawing.Size(86, 21);
             this.rbCategory.TabIndex = 15;
             this.rbCategory.TabStop = true;
             this.rbCategory.Text = "Category";
@@ -710,18 +720,18 @@
             "Vegetable",
             "Breads",
             "Other"});
-            this.cbShowCateg.Location = new System.Drawing.Point(286, 141);
-            this.cbShowCateg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbShowCateg.Location = new System.Drawing.Point(381, 174);
+            this.cbShowCateg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbShowCateg.Name = "cbShowCateg";
-            this.cbShowCateg.Size = new System.Drawing.Size(88, 21);
+            this.cbShowCateg.Size = new System.Drawing.Size(116, 24);
             this.cbShowCateg.TabIndex = 14;
             // 
             // btnTakeAmount
             // 
-            this.btnTakeAmount.Location = new System.Drawing.Point(124, 280);
-            this.btnTakeAmount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTakeAmount.Location = new System.Drawing.Point(165, 345);
+            this.btnTakeAmount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTakeAmount.Name = "btnTakeAmount";
-            this.btnTakeAmount.Size = new System.Drawing.Size(32, 19);
+            this.btnTakeAmount.Size = new System.Drawing.Size(43, 23);
             this.btnTakeAmount.TabIndex = 13;
             this.btnTakeAmount.Text = "-";
             this.btnTakeAmount.UseVisualStyleBackColor = true;
@@ -729,10 +739,10 @@
             // 
             // btnAddAmount
             // 
-            this.btnAddAmount.Location = new System.Drawing.Point(124, 262);
-            this.btnAddAmount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddAmount.Location = new System.Drawing.Point(165, 322);
+            this.btnAddAmount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddAmount.Name = "btnAddAmount";
-            this.btnAddAmount.Size = new System.Drawing.Size(32, 19);
+            this.btnAddAmount.Size = new System.Drawing.Size(43, 23);
             this.btnAddAmount.TabIndex = 12;
             this.btnAddAmount.Text = "+";
             this.btnAddAmount.UseVisualStyleBackColor = true;
@@ -741,50 +751,45 @@
             // lblChangeAmount
             // 
             this.lblChangeAmount.AutoSize = true;
-            this.lblChangeAmount.Location = new System.Drawing.Point(27, 270);
-            this.lblChangeAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblChangeAmount.Location = new System.Drawing.Point(36, 332);
             this.lblChangeAmount.Name = "lblChangeAmount";
-            this.lblChangeAmount.Size = new System.Drawing.Size(85, 13);
+            this.lblChangeAmount.Size = new System.Drawing.Size(112, 17);
             this.lblChangeAmount.TabIndex = 11;
             this.lblChangeAmount.Text = "Change amount:";
             // 
             // lblAmount
             // 
             this.lblAmount.AutoSize = true;
-            this.lblAmount.Location = new System.Drawing.Point(64, 22);
-            this.lblAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAmount.Location = new System.Drawing.Point(85, 27);
             this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(43, 13);
+            this.lblAmount.Size = new System.Drawing.Size(56, 17);
             this.lblAmount.TabIndex = 5;
             this.lblAmount.Text = "Amount";
             // 
             // lblCategory
             // 
             this.lblCategory.AutoSize = true;
-            this.lblCategory.Location = new System.Drawing.Point(169, 22);
-            this.lblCategory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCategory.Location = new System.Drawing.Point(225, 27);
             this.lblCategory.Name = "lblCategory";
-            this.lblCategory.Size = new System.Drawing.Size(49, 13);
+            this.lblCategory.Size = new System.Drawing.Size(65, 17);
             this.lblCategory.TabIndex = 10;
             this.lblCategory.Text = "Category";
             // 
             // lblPrice1
             // 
             this.lblPrice1.AutoSize = true;
-            this.lblPrice1.Location = new System.Drawing.Point(122, 22);
-            this.lblPrice1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPrice1.Location = new System.Drawing.Point(163, 27);
             this.lblPrice1.Name = "lblPrice1";
-            this.lblPrice1.Size = new System.Drawing.Size(31, 13);
+            this.lblPrice1.Size = new System.Drawing.Size(40, 17);
             this.lblPrice1.TabIndex = 9;
             this.lblPrice1.Text = "Price";
             // 
             // lblItem
             // 
             this.lblItem.AutoSize = true;
-            this.lblItem.Location = new System.Drawing.Point(27, 22);
-            this.lblItem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblItem.Location = new System.Drawing.Point(36, 27);
             this.lblItem.Name = "lblItem";
-            this.lblItem.Size = new System.Drawing.Size(27, 13);
+            this.lblItem.Size = new System.Drawing.Size(34, 17);
             this.lblItem.TabIndex = 8;
             this.lblItem.Text = "Item";
             // 
@@ -792,10 +797,10 @@
             // 
             this.rbAll.AutoSize = true;
             this.rbAll.Checked = true;
-            this.rbAll.Location = new System.Drawing.Point(286, 46);
-            this.rbAll.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbAll.Location = new System.Drawing.Point(381, 57);
+            this.rbAll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rbAll.Name = "rbAll";
-            this.rbAll.Size = new System.Drawing.Size(36, 17);
+            this.rbAll.Size = new System.Drawing.Size(44, 21);
             this.rbAll.TabIndex = 5;
             this.rbAll.TabStop = true;
             this.rbAll.Text = "All";
@@ -803,10 +808,10 @@
             // 
             // btnShow
             // 
-            this.btnShow.Location = new System.Drawing.Point(286, 209);
-            this.btnShow.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnShow.Location = new System.Drawing.Point(381, 257);
+            this.btnShow.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnShow.Name = "btnShow";
-            this.btnShow.Size = new System.Drawing.Size(87, 48);
+            this.btnShow.Size = new System.Drawing.Size(116, 59);
             this.btnShow.TabIndex = 4;
             this.btnShow.Text = "Show";
             this.btnShow.UseVisualStyleBackColor = true;
@@ -815,10 +820,10 @@
             // rbMax
             // 
             this.rbMax.AutoSize = true;
-            this.rbMax.Location = new System.Drawing.Point(286, 67);
-            this.rbMax.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbMax.Location = new System.Drawing.Point(381, 82);
+            this.rbMax.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rbMax.Name = "rbMax";
-            this.rbMax.Size = new System.Drawing.Size(99, 17);
+            this.rbMax.Size = new System.Drawing.Size(126, 21);
             this.rbMax.TabIndex = 6;
             this.rbMax.Text = "Most expensive";
             this.rbMax.UseVisualStyleBackColor = true;
@@ -826,10 +831,10 @@
             // rbMin
             // 
             this.rbMin.AutoSize = true;
-            this.rbMin.Location = new System.Drawing.Point(286, 89);
-            this.rbMin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbMin.Location = new System.Drawing.Point(381, 110);
+            this.rbMin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rbMin.Name = "rbMin";
-            this.rbMin.Size = new System.Drawing.Size(70, 17);
+            this.rbMin.Size = new System.Drawing.Size(89, 21);
             this.rbMin.TabIndex = 7;
             this.rbMin.TabStop = true;
             this.rbMin.Text = "Cheapest";
@@ -838,47 +843,39 @@
             // lblTotalPrice
             // 
             this.lblTotalPrice.AutoSize = true;
-            this.lblTotalPrice.Location = new System.Drawing.Point(214, 270);
-            this.lblTotalPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTotalPrice.Location = new System.Drawing.Point(285, 332);
             this.lblTotalPrice.Name = "lblTotalPrice";
-            this.lblTotalPrice.Size = new System.Drawing.Size(35, 13);
+            this.lblTotalPrice.Size = new System.Drawing.Size(46, 17);
             this.lblTotalPrice.TabIndex = 2;
             this.lblTotalPrice.Text = "label1";
             // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(177, 270);
-            this.lblTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTotal.Location = new System.Drawing.Point(236, 332);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(34, 13);
+            this.lblTotal.Size = new System.Drawing.Size(44, 17);
             this.lblTotal.TabIndex = 1;
             this.lblTotal.Text = "Total:";
             // 
             // lbShoppingList
             // 
             this.lbShoppingList.FormattingEnabled = true;
-            this.lbShoppingList.Location = new System.Drawing.Point(29, 46);
-            this.lbShoppingList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbShoppingList.ItemHeight = 16;
+            this.lbShoppingList.Location = new System.Drawing.Point(39, 57);
+            this.lbShoppingList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbShoppingList.Name = "lbShoppingList";
-            this.lbShoppingList.Size = new System.Drawing.Size(221, 212);
+            this.lbShoppingList.Size = new System.Drawing.Size(293, 260);
             this.lbShoppingList.TabIndex = 0;
-            // 
-            // timerTempAndLight
-            // 
-            this.timerTempAndLight.Tick += new System.EventHandler(this.timerTempAndLight_Tick);
-            // 
-            // TempAndLightPort
-            // 
-            this.TempAndLightPort.PortName = "COM5";
             // 
             // tabAgreements
             // 
             this.tabAgreements.Controls.Add(this.gbAddAgreement);
             this.tabAgreements.Controls.Add(this.gbViewAgreements);
-            this.tabAgreements.Location = new System.Drawing.Point(4, 22);
+            this.tabAgreements.Location = new System.Drawing.Point(4, 25);
+            this.tabAgreements.Margin = new System.Windows.Forms.Padding(4);
             this.tabAgreements.Name = "tabAgreements";
-            this.tabAgreements.Size = new System.Drawing.Size(757, 402);
+            this.tabAgreements.Size = new System.Drawing.Size(1103, 483);
             this.tabAgreements.TabIndex = 6;
             this.tabAgreements.Text = "Agreements";
             this.tabAgreements.UseVisualStyleBackColor = true;
@@ -890,21 +887,21 @@
             this.gbAddAgreement.Controls.Add(this.btnAcceptAgreement);
             this.gbAddAgreement.Controls.Add(this.btnAddAgreement);
             this.gbAddAgreement.Controls.Add(this.tbAgreementInfo);
-            this.gbAddAgreement.Location = new System.Drawing.Point(484, 33);
-            this.gbAddAgreement.Margin = new System.Windows.Forms.Padding(2);
+            this.gbAddAgreement.Location = new System.Drawing.Point(645, 41);
+            this.gbAddAgreement.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gbAddAgreement.Name = "gbAddAgreement";
-            this.gbAddAgreement.Padding = new System.Windows.Forms.Padding(2);
-            this.gbAddAgreement.Size = new System.Drawing.Size(242, 317);
+            this.gbAddAgreement.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbAddAgreement.Size = new System.Drawing.Size(323, 390);
             this.gbAddAgreement.TabIndex = 8;
             this.gbAddAgreement.TabStop = false;
             this.gbAddAgreement.Text = "Add new agreement";
             // 
             // btnRemoveAgreement
             // 
-            this.btnRemoveAgreement.Location = new System.Drawing.Point(128, 255);
-            this.btnRemoveAgreement.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRemoveAgreement.Location = new System.Drawing.Point(171, 314);
+            this.btnRemoveAgreement.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRemoveAgreement.Name = "btnRemoveAgreement";
-            this.btnRemoveAgreement.Size = new System.Drawing.Size(108, 49);
+            this.btnRemoveAgreement.Size = new System.Drawing.Size(144, 60);
             this.btnRemoveAgreement.TabIndex = 11;
             this.btnRemoveAgreement.Text = "Remove selected";
             this.btnRemoveAgreement.UseVisualStyleBackColor = true;
@@ -913,19 +910,18 @@
             // lblAgreement
             // 
             this.lblAgreement.AutoSize = true;
-            this.lblAgreement.Location = new System.Drawing.Point(13, 46);
-            this.lblAgreement.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAgreement.Location = new System.Drawing.Point(17, 57);
             this.lblAgreement.Name = "lblAgreement";
-            this.lblAgreement.Size = new System.Drawing.Size(114, 13);
+            this.lblAgreement.Size = new System.Drawing.Size(152, 17);
             this.lblAgreement.TabIndex = 7;
             this.lblAgreement.Text = "Agreement Description";
             // 
             // btnAcceptAgreement
             // 
-            this.btnAcceptAgreement.Location = new System.Drawing.Point(16, 255);
-            this.btnAcceptAgreement.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAcceptAgreement.Location = new System.Drawing.Point(21, 314);
+            this.btnAcceptAgreement.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAcceptAgreement.Name = "btnAcceptAgreement";
-            this.btnAcceptAgreement.Size = new System.Drawing.Size(108, 49);
+            this.btnAcceptAgreement.Size = new System.Drawing.Size(144, 60);
             this.btnAcceptAgreement.TabIndex = 6;
             this.btnAcceptAgreement.Text = "Accept selected";
             this.btnAcceptAgreement.UseVisualStyleBackColor = true;
@@ -933,10 +929,10 @@
             // 
             // btnAddAgreement
             // 
-            this.btnAddAgreement.Location = new System.Drawing.Point(16, 94);
-            this.btnAddAgreement.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddAgreement.Location = new System.Drawing.Point(21, 116);
+            this.btnAddAgreement.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddAgreement.Name = "btnAddAgreement";
-            this.btnAddAgreement.Size = new System.Drawing.Size(108, 48);
+            this.btnAddAgreement.Size = new System.Drawing.Size(144, 59);
             this.btnAddAgreement.TabIndex = 5;
             this.btnAddAgreement.Text = "Add";
             this.btnAddAgreement.UseVisualStyleBackColor = true;
@@ -944,10 +940,10 @@
             // 
             // tbAgreementInfo
             // 
-            this.tbAgreementInfo.Location = new System.Drawing.Point(16, 61);
-            this.tbAgreementInfo.Margin = new System.Windows.Forms.Padding(2);
+            this.tbAgreementInfo.Location = new System.Drawing.Point(21, 75);
+            this.tbAgreementInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbAgreementInfo.Name = "tbAgreementInfo";
-            this.tbAgreementInfo.Size = new System.Drawing.Size(205, 20);
+            this.tbAgreementInfo.Size = new System.Drawing.Size(272, 22);
             this.tbAgreementInfo.TabIndex = 2;
             // 
             // gbViewAgreements
@@ -955,21 +951,32 @@
             this.gbViewAgreements.Controls.Add(this.btnShowAcceptedAgreement);
             this.gbViewAgreements.Controls.Add(this.btnShowAllAgreements);
             this.gbViewAgreements.Controls.Add(this.lbAgreements);
-            this.gbViewAgreements.Location = new System.Drawing.Point(27, 33);
-            this.gbViewAgreements.Margin = new System.Windows.Forms.Padding(2);
+            this.gbViewAgreements.Location = new System.Drawing.Point(36, 41);
+            this.gbViewAgreements.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gbViewAgreements.Name = "gbViewAgreements";
-            this.gbViewAgreements.Padding = new System.Windows.Forms.Padding(2);
-            this.gbViewAgreements.Size = new System.Drawing.Size(433, 317);
+            this.gbViewAgreements.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbViewAgreements.Size = new System.Drawing.Size(577, 390);
             this.gbViewAgreements.TabIndex = 7;
             this.gbViewAgreements.TabStop = false;
             this.gbViewAgreements.Text = "View Agreements";
             // 
+            // btnShowAcceptedAgreement
+            // 
+            this.btnShowAcceptedAgreement.Location = new System.Drawing.Point(380, 121);
+            this.btnShowAcceptedAgreement.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnShowAcceptedAgreement.Name = "btnShowAcceptedAgreement";
+            this.btnShowAcceptedAgreement.Size = new System.Drawing.Size(144, 59);
+            this.btnShowAcceptedAgreement.TabIndex = 5;
+            this.btnShowAcceptedAgreement.Text = "Show accepted";
+            this.btnShowAcceptedAgreement.UseVisualStyleBackColor = true;
+            this.btnShowAcceptedAgreement.Click += new System.EventHandler(this.BtnShowAcceptedAgreement_Click);
+            // 
             // btnShowAllAgreements
             // 
-            this.btnShowAllAgreements.Location = new System.Drawing.Point(285, 46);
-            this.btnShowAllAgreements.Margin = new System.Windows.Forms.Padding(2);
+            this.btnShowAllAgreements.Location = new System.Drawing.Point(380, 57);
+            this.btnShowAllAgreements.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnShowAllAgreements.Name = "btnShowAllAgreements";
-            this.btnShowAllAgreements.Size = new System.Drawing.Size(108, 48);
+            this.btnShowAllAgreements.Size = new System.Drawing.Size(144, 59);
             this.btnShowAllAgreements.TabIndex = 4;
             this.btnShowAllAgreements.Text = "Show all";
             this.btnShowAllAgreements.UseVisualStyleBackColor = true;
@@ -978,31 +985,247 @@
             // lbAgreements
             // 
             this.lbAgreements.FormattingEnabled = true;
-            this.lbAgreements.Location = new System.Drawing.Point(29, 46);
-            this.lbAgreements.Margin = new System.Windows.Forms.Padding(2);
+            this.lbAgreements.ItemHeight = 16;
+            this.lbAgreements.Location = new System.Drawing.Point(39, 57);
+            this.lbAgreements.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbAgreements.Name = "lbAgreements";
-            this.lbAgreements.Size = new System.Drawing.Size(221, 212);
+            this.lbAgreements.Size = new System.Drawing.Size(293, 260);
             this.lbAgreements.TabIndex = 0;
             // 
-            // btnShowAcceptedAgreement
+            // timerTempAndLight
             // 
-            this.btnShowAcceptedAgreement.Location = new System.Drawing.Point(285, 98);
-            this.btnShowAcceptedAgreement.Margin = new System.Windows.Forms.Padding(2);
-            this.btnShowAcceptedAgreement.Name = "btnShowAcceptedAgreement";
-            this.btnShowAcceptedAgreement.Size = new System.Drawing.Size(108, 48);
-            this.btnShowAcceptedAgreement.TabIndex = 5;
-            this.btnShowAcceptedAgreement.Text = "Show accepted";
-            this.btnShowAcceptedAgreement.UseVisualStyleBackColor = true;
-            this.btnShowAcceptedAgreement.Click += new System.EventHandler(this.BtnShowAcceptedAgreement_Click);
+            this.timerTempAndLight.Tick += new System.EventHandler(this.timerTempAndLight_Tick);
+            // 
+            // TempAndLightPort
+            // 
+            this.TempAndLightPort.PortName = "COM5";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(28)))), ((int)(((byte)(79)))));
+            this.panel1.Controls.Add(this.Navigation);
+            this.panel1.Controls.Add(this.btnSchedule);
+            this.panel1.Controls.Add(this.btnShoppingList);
+            this.panel1.Controls.Add(this.btnAgreements);
+            this.panel1.Controls.Add(this.btnComplaints);
+            this.panel1.Controls.Add(this.btnDashboard);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(211, 586);
+            this.panel1.TabIndex = 1;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
+            // 
+            // Navigation
+            // 
+            this.Navigation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(252)))), ((int)(((byte)(136)))));
+            this.Navigation.Location = new System.Drawing.Point(3, 117);
+            this.Navigation.Name = "Navigation";
+            this.Navigation.Size = new System.Drawing.Size(13, 55);
+            this.Navigation.TabIndex = 5;
+            // 
+            // btnSchedule
+            // 
+            this.btnSchedule.FlatAppearance.BorderSize = 0;
+            this.btnSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSchedule.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSchedule.ForeColor = System.Drawing.Color.White;
+            this.btnSchedule.Image = global::HMU_Project_App.Properties.Resources.icons8_trash_48;
+            this.btnSchedule.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSchedule.Location = new System.Drawing.Point(25, 361);
+            this.btnSchedule.Name = "btnSchedule";
+            this.btnSchedule.Size = new System.Drawing.Size(186, 55);
+            this.btnSchedule.TabIndex = 4;
+            this.btnSchedule.Text = "   Schedule";
+            this.btnSchedule.UseVisualStyleBackColor = true;
+            this.btnSchedule.Click += new System.EventHandler(this.Button5_Click);
+            // 
+            // btnShoppingList
+            // 
+            this.btnShoppingList.FlatAppearance.BorderSize = 0;
+            this.btnShoppingList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShoppingList.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnShoppingList.ForeColor = System.Drawing.Color.White;
+            this.btnShoppingList.Image = global::HMU_Project_App.Properties.Resources.icons8_buying_48;
+            this.btnShoppingList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnShoppingList.Location = new System.Drawing.Point(25, 300);
+            this.btnShoppingList.Name = "btnShoppingList";
+            this.btnShoppingList.Size = new System.Drawing.Size(186, 55);
+            this.btnShoppingList.TabIndex = 3;
+            this.btnShoppingList.Text = "        Shopping list";
+            this.btnShoppingList.UseVisualStyleBackColor = true;
+            this.btnShoppingList.Click += new System.EventHandler(this.BtnShoppingList_Click);
+            // 
+            // btnAgreements
+            // 
+            this.btnAgreements.FlatAppearance.BorderSize = 0;
+            this.btnAgreements.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgreements.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnAgreements.ForeColor = System.Drawing.Color.White;
+            this.btnAgreements.Image = global::HMU_Project_App.Properties.Resources.icons8_handshake_60;
+            this.btnAgreements.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgreements.Location = new System.Drawing.Point(25, 239);
+            this.btnAgreements.Name = "btnAgreements";
+            this.btnAgreements.Size = new System.Drawing.Size(186, 55);
+            this.btnAgreements.TabIndex = 2;
+            this.btnAgreements.Text = "        Agreements";
+            this.btnAgreements.UseVisualStyleBackColor = true;
+            this.btnAgreements.Click += new System.EventHandler(this.Button3_Click);
+            // 
+            // btnComplaints
+            // 
+            this.btnComplaints.FlatAppearance.BorderSize = 0;
+            this.btnComplaints.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnComplaints.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnComplaints.ForeColor = System.Drawing.Color.White;
+            this.btnComplaints.Image = global::HMU_Project_App.Properties.Resources.icons8_document_26;
+            this.btnComplaints.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnComplaints.Location = new System.Drawing.Point(25, 178);
+            this.btnComplaints.Name = "btnComplaints";
+            this.btnComplaints.Size = new System.Drawing.Size(186, 55);
+            this.btnComplaints.TabIndex = 1;
+            this.btnComplaints.Text = "      Complaints";
+            this.btnComplaints.UseVisualStyleBackColor = true;
+            this.btnComplaints.Click += new System.EventHandler(this.BtnComplaints_Click);
+            // 
+            // btnDashboard
+            // 
+            this.btnDashboard.FlatAppearance.BorderSize = 0;
+            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashboard.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnDashboard.ForeColor = System.Drawing.Color.White;
+            this.btnDashboard.Image = global::HMU_Project_App.Properties.Resources.icons8_home_32;
+            this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDashboard.Location = new System.Drawing.Point(25, 117);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Size = new System.Drawing.Size(186, 55);
+            this.btnDashboard.TabIndex = 0;
+            this.btnDashboard.Text = "      Dashboard";
+            this.btnDashboard.UseVisualStyleBackColor = true;
+            this.btnDashboard.Click += new System.EventHandler(this.BtnDashboard_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(252)))), ((int)(((byte)(136)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(211, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(921, 10);
+            this.panel2.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.Color.Gray;
+            this.label1.Location = new System.Drawing.Point(217, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(225, 23);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "STUDENT HOUSE SYSTEM";
+            this.label1.UseMnemonic = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::HMU_Project_App.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 11);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(49, 78);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button6
+            // 
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Image = global::HMU_Project_App.Properties.Resources.icons8_power_off_button_100;
+            this.button6.Location = new System.Drawing.Point(1069, 12);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(51, 40);
+            this.button6.TabIndex = 6;
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.Button6_Click);
+            // 
+            // btnAdmin
+            // 
+            this.btnAdmin.FlatAppearance.BorderSize = 0;
+            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdmin.Image = global::HMU_Project_App.Properties.Resources.icons8_settings_50;
+            this.btnAdmin.Location = new System.Drawing.Point(1013, 11);
+            this.btnAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Size = new System.Drawing.Size(50, 45);
+            this.btnAdmin.TabIndex = 0;
+            this.btnAdmin.UseVisualStyleBackColor = true;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
+            // 
+            // adminTab1
+            // 
+            this.adminTab1.Location = new System.Drawing.Point(214, 123);
+            this.adminTab1.Name = "adminTab1";
+            this.adminTab1.Size = new System.Drawing.Size(918, 463);
+            this.adminTab1.TabIndex = 14;
+            // 
+            // loginTab1
+            // 
+            this.loginTab1.Location = new System.Drawing.Point(214, 123);
+            this.loginTab1.Name = "loginTab1";
+            this.loginTab1.Size = new System.Drawing.Size(918, 463);
+            this.loginTab1.TabIndex = 13;
+            // 
+            // shoppingListTab1
+            // 
+            this.shoppingListTab1.Location = new System.Drawing.Point(211, 123);
+            this.shoppingListTab1.Name = "shoppingListTab1";
+            this.shoppingListTab1.Size = new System.Drawing.Size(918, 463);
+            this.shoppingListTab1.TabIndex = 12;
+            // 
+            // agreementsTab1
+            // 
+            this.agreementsTab1.Location = new System.Drawing.Point(211, 123);
+            this.agreementsTab1.Name = "agreementsTab1";
+            this.agreementsTab1.Size = new System.Drawing.Size(918, 463);
+            this.agreementsTab1.TabIndex = 11;
+            // 
+            // complaintsTab1
+            // 
+            this.complaintsTab1.Location = new System.Drawing.Point(211, 123);
+            this.complaintsTab1.Name = "complaintsTab1";
+            this.complaintsTab1.Size = new System.Drawing.Size(918, 463);
+            this.complaintsTab1.TabIndex = 10;
+            // 
+            // dashboard1
+            // 
+            this.dashboard1.Location = new System.Drawing.Point(214, 123);
+            this.dashboard1.Name = "dashboard1";
+            this.dashboard1.Size = new System.Drawing.Size(918, 463);
+            this.dashboard1.TabIndex = 9;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(991, 430);
+            this.ClientSize = new System.Drawing.Size(1132, 586);
+            this.Controls.Add(this.adminTab1);
+            this.Controls.Add(this.loginTab1);
+            this.Controls.Add(this.shoppingListTab1);
+            this.Controls.Add(this.agreementsTab1);
+            this.Controls.Add(this.complaintsTab1);
+            this.Controls.Add(this.dashboard1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabGeneral);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Controls.Add(this.btnAdmin);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabGeneral.ResumeLayout(false);
@@ -1027,7 +1250,10 @@
             this.gbAddAgreement.ResumeLayout(false);
             this.gbAddAgreement.PerformLayout();
             this.gbViewAgreements.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1111,6 +1337,23 @@
         private System.Windows.Forms.Button btnShowAcceptedAgreement;
         private System.Windows.Forms.Button btnShowAllAgreements;
         private System.Windows.Forms.ListBox lbAgreements;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnSchedule;
+        private System.Windows.Forms.Button btnShoppingList;
+        private System.Windows.Forms.Button btnAgreements;
+        private System.Windows.Forms.Button btnComplaints;
+        private System.Windows.Forms.Button btnDashboard;
+        private System.Windows.Forms.Panel Navigation;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private Dashboard dashboard1;
+        private ComplaintsTab complaintsTab1;
+        private AgreementsTab agreementsTab1;
+        private ShoppingListTab shoppingListTab1;
+        private LoginTab loginTab1;
+        private AdminTab adminTab1;
     }
 }
 

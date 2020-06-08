@@ -22,6 +22,7 @@ namespace HMU_Project_App
 {
     public partial class Form1 : Form
     {
+        
         public Form1()
         {
             InitializeComponent();
@@ -29,7 +30,11 @@ namespace HMU_Project_App
             ListRules.Add("No loud gatherings after 22:00.");
             ListRules.Add("Garbage bin must be taken out on time.");
             lblTotalPrice.Text = "0.00 €";
+            Navigation.Height = btnDashboard.Height;
+            dashboard1.BringToFront();
         }
+
+       
         List<string> ListRules = new List<string>();
         private Complaints complaint;
         List<Complaints> ListComplaints = new List<Complaints>();
@@ -43,7 +48,7 @@ namespace HMU_Project_App
         List<string> Categ = new List<string>();
         List<int> Amount = new List<int>();
 
-        string adminPassword = "password";
+        public string adminPassword = "password";
 
         /*The UpdateRules method clears and then repopulates the lbRules listbox to show updated data.*/
         public void UpdateRules()
@@ -379,8 +384,9 @@ namespace HMU_Project_App
         /*the btnAdmin click event opens the admin login panel*/
         private void btnAdmin_Click(object sender, EventArgs e)
         {
-            tabGeneral.TabPages.Add(tabAdminLogin);
-            tabGeneral.SelectedTab = tabGeneral.TabPages["tabAdminLogin"];
+            
+            adminTab1.BringToFront();
+            loginTab1.BringToFront();
         }
         /*btnSetNewPass click event compares the value of our stored password with the one in the textbox, and if correct,
         changes the stored password to the one in tbNewPass*/
@@ -766,6 +772,70 @@ namespace HMU_Project_App
             }
 
             UpdateAgreements();
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            Navigation.Height = btnAgreements.Height;
+            agreementsTab1.BringToFront();
+        }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TabDashboard_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LblTemperature_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TbComplaints_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LblAdminPass_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TbAdminPass_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnDashboard_Click(object sender, EventArgs e)
+        {
+            Navigation.Height = btnDashboard.Height;
+            dashboard1.BringToFront();
+        }
+
+        private void BtnComplaints_Click(object sender, EventArgs e)
+        {
+            Navigation.Height = btnComplaints.Height;
+            complaintsTab1.BringToFront();
+        }
+
+        private void BtnShoppingList_Click(object sender, EventArgs e)
+        {
+            Navigation.Height = btnShoppingList.Height;
+            shoppingListTab1.BringToFront();
+        }
+
+        private void Button6_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
