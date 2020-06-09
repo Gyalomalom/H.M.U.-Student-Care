@@ -37,6 +37,8 @@
             this.lbComplaints = new System.Windows.Forms.ListBox();
             this.lbRules = new System.Windows.Forms.ListBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.passChange1 = new HMU_Project_App.PassChange();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,6 +70,7 @@
             this.btnPassChange.TabIndex = 15;
             this.btnPassChange.Text = "Change password";
             this.btnPassChange.UseVisualStyleBackColor = false;
+            this.btnPassChange.Click += new System.EventHandler(this.btnPassChange_Click);
             // 
             // btnReadComplaints
             // 
@@ -160,6 +163,20 @@
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
+            // passChange1
+            // 
+            this.passChange1.Location = new System.Drawing.Point(0, 0);
+            this.passChange1.Name = "passChange1";
+            this.passChange1.Size = new System.Drawing.Size(922, 460);
+            this.passChange1.TabIndex = 18;
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(0, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(915, 457);
+            this.panel1.TabIndex = 19;
+            // 
             // AdminTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -173,6 +190,8 @@
             this.Controls.Add(this.btnAddRule);
             this.Controls.Add(this.lbComplaints);
             this.Controls.Add(this.lbRules);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.passChange1);
             this.Name = "AdminTab";
             this.Size = new System.Drawing.Size(918, 463);
             this.Load += new System.EventHandler(this.AdminTab_Load);
@@ -193,5 +212,7 @@
         private System.Windows.Forms.ListBox lbComplaints;
         private System.Windows.Forms.ListBox lbRules;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private PassChange passChange1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbViewRules = new System.Windows.Forms.ListBox();
             this.btnViewRules = new System.Windows.Forms.Button();
             this.btnHideRules = new System.Windows.Forms.Button();
@@ -39,6 +40,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pbTrash = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.timerUpdate = new System.Windows.Forms.Timer(this.components);
+            this.TempAndLightPort = new System.IO.Ports.SerialPort(this.components);
             this.pnlGarbage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbTrash)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -173,6 +176,11 @@
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
+            // timerUpdate
+            // 
+            this.timerUpdate.Enabled = true;
+            this.timerUpdate.Tick += new System.EventHandler(this.timerUpdate_Tick);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -212,5 +220,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pbTrash;
+        private System.Windows.Forms.Timer timerUpdate;
+        private System.IO.Ports.SerialPort TempAndLightPort;
     }
 }

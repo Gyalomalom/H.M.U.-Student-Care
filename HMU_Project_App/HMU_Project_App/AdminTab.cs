@@ -15,24 +15,19 @@ namespace HMU_Project_App
         public AdminTab()
         {
             InitializeComponent();
-            ListRules.Add("No smoking in the building.");
-            ListRules.Add("No loud gatherings after 22:00.");
-            ListRules.Add("Garbage bin must be taken out on time.");
-        }
-        private Complaints complaint;
-        List<Complaints> ListComplaints = new List<Complaints>();
-        public List<string> ListRules = new List<string>();
+    }
 
 
         private void AdminTab_Load(object sender, EventArgs e)
         {
-
+            UpdateRules();
+            passChange1.SendToBack();
         }
         public void UpdateComplaints()
         {
             lbComplaints.Items.Clear();
 
-            foreach (Complaints value in ListComplaints)
+            foreach (Complaints value in Form1.ListComplaints)
             {
                 lbComplaints.Items.Add(value.GetComplaintInfo());
             }
@@ -46,9 +41,9 @@ namespace HMU_Project_App
         {
             lbRules.Items.Clear();
             int index = 0;
-            foreach (string value in ListRules)
+            foreach (string value in Form1.ListRules)
             {
-                lbRules.Items.Add(ListRules[index]);
+                lbRules.Items.Add(Form1.ListRules[index]);
                 index++;
             }
         }
@@ -56,7 +51,7 @@ namespace HMU_Project_App
         {
             if (tbRuleContent.Text != "")
             {
-                ListRules.Add(tbRuleContent.Text);
+                Form1.ListRules.Add(tbRuleContent.Text);
                 UpdateRules();
                 tbRuleContent.Text = "";
             }
@@ -78,11 +73,11 @@ namespace HMU_Project_App
             else if (!String.IsNullOrWhiteSpace(tbRuleContent.Text)) //check if field is empty
             {
                 string selectedRule = lbRules.Items[selectedRuleIndex].ToString();
-                for (index = 0; index <= ListRules.Count - 1; index++)
+                for (index = 0; index <= Form1.ListRules.Count - 1; index++)
                 {
-                    if (selectedRule == ListRules[index])
+                    if (selectedRule == Form1.ListRules[index])
                     {
-                        ListRules[index] = tbRuleContent.Text;
+                        Form1.ListRules[index] = tbRuleContent.Text;
                     }
                 }
 
@@ -106,11 +101,11 @@ namespace HMU_Project_App
             else
             {
                 string selectedRule = lbRules.Items[selectedRuleIndex].ToString();
-                for (index = 0; index <= ListRules.Count - 1; index++)
+                for (index = 0; index <= Form1.ListRules.Count - 1; index++)
                 {
-                    if (selectedRule == ListRules[index])
+                    if (selectedRule == Form1.ListRules[index])
                     {
-                        ListRules.RemoveAt(index);
+                        Form1.ListRules.RemoveAt(index);
                     }
                 }
 
@@ -121,6 +116,11 @@ namespace HMU_Project_App
         private void Button1_Click(object sender, EventArgs e)
         {
         
+        }
+
+        private void btnPassChange_Click(object sender, EventArgs e)
+        {
+            passChange1.BringToFront();
         }
     }
 }

@@ -113,9 +113,9 @@
             this.btnAgreements = new System.Windows.Forms.Button();
             this.btnComplaints = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button6 = new System.Windows.Forms.Button();
             this.btnAdmin = new System.Windows.Forms.Button();
             this.adminTab1 = new HMU_Project_App.AdminTab();
@@ -124,6 +124,7 @@
             this.agreementsTab1 = new HMU_Project_App.AgreementsTab();
             this.complaintsTab1 = new HMU_Project_App.ComplaintsTab();
             this.dashboard1 = new HMU_Project_App.Dashboard();
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.tabGeneral.SuspendLayout();
             this.tabDashboard.SuspendLayout();
             this.pnlGarbage.SuspendLayout();
@@ -1105,6 +1106,16 @@
             this.btnDashboard.UseVisualStyleBackColor = true;
             this.btnDashboard.Click += new System.EventHandler(this.BtnDashboard_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::HMU_Project_App.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 11);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(49, 78);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(252)))), ((int)(((byte)(136)))));
@@ -1125,16 +1136,6 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "STUDENT HOUSE SYSTEM";
             this.label1.UseMnemonic = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::HMU_Project_App.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 11);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(49, 78);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
             // 
             // button6
             // 
@@ -1172,6 +1173,7 @@
             // 
             // loginTab1
             // 
+            this.loginTab1.ForeColor = System.Drawing.Color.Gray;
             this.loginTab1.Location = new System.Drawing.Point(214, 123);
             this.loginTab1.Name = "loginTab1";
             this.loginTab1.Size = new System.Drawing.Size(918, 463);
@@ -1210,6 +1212,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1132, 586);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.adminTab1);
             this.Controls.Add(this.loginTab1);
             this.Controls.Add(this.shoppingListTab1);
@@ -1218,10 +1221,9 @@
             this.Controls.Add(this.dashboard1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabGeneral);
             this.Controls.Add(this.btnAdmin);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
@@ -1354,6 +1356,7 @@
         private ShoppingListTab shoppingListTab1;
         private LoginTab loginTab1;
         private AdminTab adminTab1;
+        private System.IO.Ports.SerialPort serialPort1;
     }
 }
 

@@ -53,6 +53,7 @@
             this.btnShowAcceptedAgreement.TabIndex = 13;
             this.btnShowAcceptedAgreement.Text = "Show accepted";
             this.btnShowAcceptedAgreement.UseVisualStyleBackColor = false;
+            this.btnShowAcceptedAgreement.Click += new System.EventHandler(this.btnShowAcceptedAgreement_Click_1);
             // 
             // btnShowAllAgreements
             // 
@@ -67,6 +68,7 @@
             this.btnShowAllAgreements.TabIndex = 12;
             this.btnShowAllAgreements.Text = "Show all";
             this.btnShowAllAgreements.UseVisualStyleBackColor = false;
+            this.btnShowAllAgreements.Click += new System.EventHandler(this.btnShowAllAgreements_Click_1);
             // 
             // lbAgreements
             // 
@@ -94,6 +96,7 @@
             this.btnRemoveAgreement.TabIndex = 18;
             this.btnRemoveAgreement.Text = "Remove selected";
             this.btnRemoveAgreement.UseVisualStyleBackColor = false;
+            this.btnRemoveAgreement.Click += new System.EventHandler(this.btnRemoveAgreement_Click_1);
             // 
             // lblAgreement
             // 
@@ -118,6 +121,7 @@
             this.btnAcceptAgreement.TabIndex = 16;
             this.btnAcceptAgreement.Text = "Accept selected";
             this.btnAcceptAgreement.UseVisualStyleBackColor = false;
+            this.btnAcceptAgreement.Click += new System.EventHandler(this.btnAcceptAgreement_Click_1);
             // 
             // btnAddAgreement
             // 

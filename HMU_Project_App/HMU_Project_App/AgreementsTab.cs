@@ -17,14 +17,12 @@ namespace HMU_Project_App
             InitializeComponent();
         }
 
-        List<string> Agreements = new List<string>(); //list for storing agreement information
-        List<string> AcceptedAgreements = new List<string>();
 
         private void UpdateAgreements() // method for updating the list of agreements
         {
             lbAgreements.Items.Clear();
 
-            foreach (string value in Agreements)
+            foreach (string value in Form1.Agreements)
             {
                 lbAgreements.Items.Add($"{value}");
             }
@@ -34,7 +32,7 @@ namespace HMU_Project_App
 
             string agreement = tbAgreementInfo.Text;
 
-            Agreements.Add(agreement);
+            Form1.Agreements.Add(agreement);
 
             UpdateAgreements();
         }
@@ -48,7 +46,7 @@ namespace HMU_Project_App
         {
             lbAgreements.Items.Clear();
 
-            foreach (string value in AcceptedAgreements)
+            foreach (string value in Form1.AcceptedAgreements)
             {
                 lbAgreements.Items.Add(value + " : Accepted");
             }
@@ -73,7 +71,7 @@ namespace HMU_Project_App
 
             if (accepted != null)
             {
-                AcceptedAgreements.Add(accepted);
+                Form1.AcceptedAgreements.Add(accepted);
             }
             else
             {
@@ -92,19 +90,19 @@ namespace HMU_Project_App
             else
             {
                 string selectedAgreement = lbAgreements.Items[selectedAgreementIndex].ToString();
-                for (index = 0; index <= Agreements.Count - 1; index++)
+                for (index = 0; index <= Form1.Agreements.Count - 1; index++)
                 {
-                    if (selectedAgreement == Agreements[index])
+                    if (selectedAgreement == Form1.Agreements[index])
                     {
-                        Agreements.RemoveAt(index);
+                        Form1.Agreements.RemoveAt(index);
                     }
                 }
 
-                for (index = 0; index <= AcceptedAgreements.Count - 1; index++)
+                for (index = 0; index <= Form1.AcceptedAgreements.Count - 1; index++)
                 {
-                    if (selectedAgreement == AcceptedAgreements[index])
+                    if (selectedAgreement == Form1.AcceptedAgreements[index])
                     {
-                        AcceptedAgreements.RemoveAt(index);
+                        Form1.AcceptedAgreements.RemoveAt(index);
                     }
                 }
 
@@ -115,7 +113,76 @@ namespace HMU_Project_App
 
         private void BtnAddAgreement_Click_1(object sender, EventArgs e)
         {
+            if (tbAgreementInfo.Text != "")
+            {
+                AddAgreement();
+                tbAgreementInfo.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Areement field is empty. Please write an agreement.");
+            }
+        }
 
+        private void btnShowAllAgreements_Click_1(object sender, EventArgs e)
+        {
+            UpdateAgreements();
+        }
+
+        private void btnShowAcceptedAgreement_Click_1(object sender, EventArgs e)
+        {
+            lbAgreements.Items.Clear();
+
+            foreach (string value in Form1.AcceptedAgreements)
+            {
+                lbAgreements.Items.Add(value + " : Accepted");
+            }
+        }
+
+        private void btnAcceptAgreement_Click_1(object sender, EventArgs e)
+        {
+            string accepted = (string)lbAgreements.SelectedItem;
+
+            if (accepted != null)
+            {
+                Form1.AcceptedAgreements.Add(accepted);
+            }
+            else
+            {
+                MessageBox.Show("Please select an agreement.");
+            }
+        }
+
+        private void btnRemoveAgreement_Click_1(object sender, EventArgs e)
+        {
+            int index = 0;
+            int selectedAgreementIndex = lbAgreements.SelectedIndex;
+            if (selectedAgreementIndex < 0)
+            {
+                MessageBox.Show("Please select an agreement.");
+            }
+            else
+            {
+                string selectedAgreement = lbAgreements.Items[selectedAgreementIndex].ToString();
+                for (index = 0; index <= Form1.Agreements.Count - 1; index++)
+                {
+                    if (selectedAgreement == Form1.Agreements[index])
+                    {
+                        Form1.Agreements.RemoveAt(index);
+                    }
+                }
+
+                for (index = 0; index <= Form1.AcceptedAgreements.Count - 1; index++)
+                {
+                    if (selectedAgreement == Form1.AcceptedAgreements[index])
+                    {
+                        Form1.AcceptedAgreements.RemoveAt(index);
+                    }
+                }
+
+            }
+
+            UpdateAgreements();
         }
     }
 }

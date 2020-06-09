@@ -66,6 +66,7 @@
             this.btnRmvSelected.TabIndex = 20;
             this.btnRmvSelected.Text = "Remove selected";
             this.btnRmvSelected.UseVisualStyleBackColor = false;
+            this.btnRmvSelected.Click += new System.EventHandler(this.btnRmvSelected_Click);
             // 
             // lblCateg
             // 
@@ -132,6 +133,7 @@
             this.btnRemove.TabIndex = 15;
             this.btnRemove.Text = "Remove item";
             this.btnRemove.UseVisualStyleBackColor = false;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // btnAdd
             // 
@@ -147,6 +149,7 @@
             this.btnAdd.TabIndex = 14;
             this.btnAdd.Text = "Add item";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // tbPrice
             // 
@@ -215,6 +218,7 @@
             this.btnTakeAmount.TabIndex = 34;
             this.btnTakeAmount.Text = "-";
             this.btnTakeAmount.UseVisualStyleBackColor = false;
+            this.btnTakeAmount.Click += new System.EventHandler(this.btnTakeAmount_Click);
             // 
             // btnAddAmount
             // 
@@ -228,6 +232,7 @@
             this.btnAddAmount.TabIndex = 33;
             this.btnAddAmount.Text = "+";
             this.btnAddAmount.UseVisualStyleBackColor = false;
+            this.btnAddAmount.Click += new System.EventHandler(this.btnAddAmount_Click);
             // 
             // lblChangeAmount
             // 
@@ -300,6 +305,7 @@
             this.btnShow.TabIndex = 24;
             this.btnShow.Text = "Show";
             this.btnShow.UseVisualStyleBackColor = false;
+            this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
             // 
             // rbMax
             // 

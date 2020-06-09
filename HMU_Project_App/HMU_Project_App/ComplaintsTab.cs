@@ -17,8 +17,6 @@ namespace HMU_Project_App
             InitializeComponent();
         }
 
-        private Complaints complaint;
-        List<Complaints> ListComplaints = new List<Complaints>();
 
         private void BtnAddComplaint_Click(object sender, EventArgs e)
         {
@@ -27,9 +25,9 @@ namespace HMU_Project_App
                 string c = tbComplaints.Text;
                 string d = DateTime.Now.ToString();
 
-                complaint = new Complaints(d, c);
+                Form1.complaint = new Complaints(d, c);
 
-                ListComplaints.Add(complaint);
+                Form1.ListComplaints.Add(Form1.complaint);
 
                 tbComplaints.Text = "";
             }

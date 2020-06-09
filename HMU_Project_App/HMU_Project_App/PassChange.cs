@@ -15,13 +15,13 @@ namespace HMU_Project_App
         public PassChange()
         {
             InitializeComponent();
+            this.SendToBack();
         }
 
-        string pass = "password";
 
         private void BtnSetNewPass_Click(object sender, EventArgs e)
         {
-            if (tbCurrentPass.Text == pass)
+            if (tbCurrentPass.Text == Form1.adminPassword)
             {
                 if (tbCurrentPass.Text == tbNewPass.Text)
                 {
@@ -31,10 +31,11 @@ namespace HMU_Project_App
                 }
                 else if ((!String.IsNullOrWhiteSpace(tbCurrentPass.Text)) && (!String.IsNullOrWhiteSpace(tbNewPass.Text)))
                 {
-                    pass = tbNewPass.Text;
-                    MessageBox.Show("Password changed successfully. Please log in again.");
+                    Form1.adminPassword = tbNewPass.Text;
+                    MessageBox.Show("Password changed successfully.");
                     tbCurrentPass.Text = "";
                     tbNewPass.Text = "";
+                    this.SendToBack();
                     
 
                 }
@@ -54,6 +55,20 @@ namespace HMU_Project_App
         private void PassChange_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void cbShowPass_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbShowPass.Checked)
+            {
+                tbCurrentPass.PasswordChar = '\0';
+                tbNewPass.PasswordChar = '\0';
+            }
+            else
+            {
+                tbCurrentPass.PasswordChar = '*';
+                tbNewPass.PasswordChar = '*';
+            }
         }
     }
 }

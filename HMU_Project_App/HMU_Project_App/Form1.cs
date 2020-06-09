@@ -22,33 +22,32 @@ namespace HMU_Project_App
 {
     public partial class Form1 : Form
     {
-        
+
         public Form1()
         {
             InitializeComponent();
             ListRules.Add("No smoking in the building.");
             ListRules.Add("No loud gatherings after 22:00.");
             ListRules.Add("Garbage bin must be taken out on time.");
-            lblTotalPrice.Text = "0.00 €";
             Navigation.Height = btnDashboard.Height;
             dashboard1.BringToFront();
         }
 
-       
-        List<string> ListRules = new List<string>();
-        private Complaints complaint;
-        List<Complaints> ListComplaints = new List<Complaints>();
 
-        List<string> Agreements = new List<string>(); //list for storing agreement information
-        List<string> AcceptedAgreements = new List<string>();
+        public static List<string> ListRules = new List<string>();
+        public static Complaints complaint;
+        public static List<Complaints> ListComplaints = new List<Complaints>();
+
+        public static List<string> Agreements = new List<string>(); //list for storing agreement information
+        public static List<string> AcceptedAgreements = new List<string>();
 
 
-        List<string> Items = new List<string>(); //lists for storing shopping list data
-        List<double> Prices = new List<double>();
-        List<string> Categ = new List<string>();
-        List<int> Amount = new List<int>();
+        public static List<string> Items = new List<string>(); //lists for storing shopping list data
+        public static List<double> Prices = new List<double>();
+        public static List<string> Categ = new List<string>();
+        public static List<int> Amount = new List<int>();
 
-        public string adminPassword = "password";
+        public static string adminPassword = "password";
 
         /*The UpdateRules method clears and then repopulates the lbRules listbox to show updated data.*/
         public void UpdateRules()
@@ -384,7 +383,6 @@ namespace HMU_Project_App
         /*the btnAdmin click event opens the admin login panel*/
         private void btnAdmin_Click(object sender, EventArgs e)
         {
-            
             adminTab1.BringToFront();
             loginTab1.BringToFront();
         }
@@ -578,7 +576,7 @@ namespace HMU_Project_App
             }
         }
 
-        private void timerTempAndLight_Tick(object sender, EventArgs e)
+        public void timerTempAndLight_Tick(object sender, EventArgs e)
         {
             if (TempAndLightPort.BytesToRead > 0)
             {
@@ -642,7 +640,15 @@ namespace HMU_Project_App
         private void BtnAddAgreement_Click(object sender, EventArgs e)
         {
 
-
+            if (tbAgreementInfo.Text != "")
+            {
+                AddAgreement();
+                tbAgreementInfo.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Areement field is empty. Please write an agreement.");
+            }
 
         }
 
@@ -685,18 +691,18 @@ namespace HMU_Project_App
 
         private void BtnShowAllAgreements_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void BtnAcceptAgreement_Click(object sender, EventArgs e)
         {
-            
+
 
         }
 
         private void BtnShowAcceptedAgreements_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void BtnAddAgreement_Click_1(object sender, EventArgs e)
@@ -837,5 +843,10 @@ namespace HMU_Project_App
         {
 
         }
+
+        public static void callPassChange()
+        {
+            
+    }
     }
 }

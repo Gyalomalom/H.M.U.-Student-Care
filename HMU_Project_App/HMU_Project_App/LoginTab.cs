@@ -15,22 +15,23 @@ namespace HMU_Project_App
         public LoginTab()
         {
             InitializeComponent();
+            tbAdminPass.Text = "";
         }
 
-
-        string pass = "password";
 
 
         private void BtnAdminLogin_Click(object sender, EventArgs e)
         {
-            if (tbAdminPass.Text == pass)
+            if (tbAdminPass.Text == Form1.adminPassword)
             {
                 this.SendToBack();
+                tbAdminPass.Text = "";
 
             }
-            else if (tbAdminPass.Text == "")
+            else if (tbAdminPass.Text=="")
             {
                 MessageBox.Show("Password field is empty. Please enter a password.");
+                tbAdminPass.Text = "";
             }
             else
             {

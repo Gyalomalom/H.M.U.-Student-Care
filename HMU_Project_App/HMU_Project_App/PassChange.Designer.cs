@@ -50,6 +50,7 @@
             this.cbShowPass.TabIndex = 11;
             this.cbShowPass.Text = "Show password";
             this.cbShowPass.UseVisualStyleBackColor = true;
+            this.cbShowPass.CheckedChanged += new System.EventHandler(this.cbShowPass_CheckedChanged);
             // 
             // btnSetNewPass
             // 
