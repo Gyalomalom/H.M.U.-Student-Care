@@ -107,6 +107,7 @@
             this.timerTempAndLight = new System.Windows.Forms.Timer(this.components);
             this.TempAndLightPort = new System.IO.Ports.SerialPort(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblExit = new System.Windows.Forms.Label();
             this.Navigation = new System.Windows.Forms.Panel();
             this.btnSchedule = new System.Windows.Forms.Button();
             this.btnShoppingList = new System.Windows.Forms.Button();
@@ -114,10 +115,9 @@
             this.btnComplaints = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
-            this.btnAdmin = new System.Windows.Forms.Button();
+            this.plBorder = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.adminTab1 = new HMU_Project_App.AdminTab();
             this.loginTab1 = new HMU_Project_App.LoginTab();
             this.shoppingListTab1 = new HMU_Project_App.ShoppingListTab();
@@ -125,6 +125,8 @@
             this.complaintsTab1 = new HMU_Project_App.ComplaintsTab();
             this.dashboard1 = new HMU_Project_App.Dashboard();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.btnAdmin = new System.Windows.Forms.Button();
+            this.scheduleTab1 = new HMU_Project_App.ScheduleTab();
             this.tabGeneral.SuspendLayout();
             this.tabDashboard.SuspendLayout();
             this.pnlGarbage.SuspendLayout();
@@ -1004,6 +1006,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(28)))), ((int)(((byte)(79)))));
+            this.panel1.Controls.Add(this.lblExit);
             this.panel1.Controls.Add(this.Navigation);
             this.panel1.Controls.Add(this.btnSchedule);
             this.panel1.Controls.Add(this.btnShoppingList);
@@ -1011,6 +1014,7 @@
             this.panel1.Controls.Add(this.btnComplaints);
             this.panel1.Controls.Add(this.btnDashboard);
             this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.button6);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -1018,12 +1022,24 @@
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
             // 
+            // lblExit
+            // 
+            this.lblExit.AutoSize = true;
+            this.lblExit.BackColor = System.Drawing.Color.Transparent;
+            this.lblExit.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblExit.ForeColor = System.Drawing.Color.White;
+            this.lblExit.Location = new System.Drawing.Point(80, 544);
+            this.lblExit.Name = "lblExit";
+            this.lblExit.Size = new System.Drawing.Size(39, 22);
+            this.lblExit.TabIndex = 8;
+            this.lblExit.Text = "Exit";
+            // 
             // Navigation
             // 
             this.Navigation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(252)))), ((int)(((byte)(136)))));
-            this.Navigation.Location = new System.Drawing.Point(3, 117);
+            this.Navigation.Location = new System.Drawing.Point(25, 500);
             this.Navigation.Name = "Navigation";
-            this.Navigation.Size = new System.Drawing.Size(13, 55);
+            this.Navigation.Size = new System.Drawing.Size(167, 1);
             this.Navigation.TabIndex = 5;
             // 
             // btnSchedule
@@ -1116,53 +1132,42 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(252)))), ((int)(((byte)(136)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(211, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(921, 10);
-            this.panel2.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(217, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(225, 23);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "STUDENT HOUSE SYSTEM";
-            this.label1.UseMnemonic = false;
-            // 
             // button6
             // 
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Image = global::HMU_Project_App.Properties.Resources.icons8_power_off_button_100;
-            this.button6.Location = new System.Drawing.Point(1069, 12);
+            this.button6.Image = global::HMU_Project_App.Properties.Resources.icons8_exit_52;
+            this.button6.Location = new System.Drawing.Point(25, 534);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(51, 40);
+            this.button6.Size = new System.Drawing.Size(40, 40);
             this.button6.TabIndex = 6;
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.Button6_Click);
             // 
-            // btnAdmin
+            // plBorder
             // 
-            this.btnAdmin.FlatAppearance.BorderSize = 0;
-            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdmin.Image = global::HMU_Project_App.Properties.Resources.icons8_settings_50;
-            this.btnAdmin.Location = new System.Drawing.Point(1013, 11);
-            this.btnAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(50, 45);
-            this.btnAdmin.TabIndex = 0;
-            this.btnAdmin.UseVisualStyleBackColor = true;
-            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
+            this.plBorder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(252)))), ((int)(((byte)(136)))));
+            this.plBorder.Dock = System.Windows.Forms.DockStyle.Top;
+            this.plBorder.Location = new System.Drawing.Point(211, 0);
+            this.plBorder.Name = "plBorder";
+            this.plBorder.Size = new System.Drawing.Size(921, 24);
+            this.plBorder.TabIndex = 0;
+            this.plBorder.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PlBorder_MouseDown);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.Color.Gray;
+            this.label1.Location = new System.Drawing.Point(217, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(225, 23);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "STUDENT HOUSE SYSTEM";
+            this.label1.UseMnemonic = false;
+            this.label1.Click += new System.EventHandler(this.Label1_Click_1);
             // 
             // adminTab1
             // 
@@ -1207,12 +1212,33 @@
             this.dashboard1.Size = new System.Drawing.Size(918, 463);
             this.dashboard1.TabIndex = 9;
             // 
+            // btnAdmin
+            // 
+            this.btnAdmin.FlatAppearance.BorderSize = 0;
+            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdmin.Image = global::HMU_Project_App.Properties.Resources.icons8_settings_50;
+            this.btnAdmin.Location = new System.Drawing.Point(1070, 29);
+            this.btnAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Size = new System.Drawing.Size(50, 45);
+            this.btnAdmin.TabIndex = 0;
+            this.btnAdmin.UseVisualStyleBackColor = true;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
+            // 
+            // scheduleTab1
+            // 
+            this.scheduleTab1.Location = new System.Drawing.Point(214, 123);
+            this.scheduleTab1.Name = "scheduleTab1";
+            this.scheduleTab1.Size = new System.Drawing.Size(918, 463);
+            this.scheduleTab1.TabIndex = 15;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1132, 586);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.scheduleTab1);
+            this.Controls.Add(this.plBorder);
             this.Controls.Add(this.adminTab1);
             this.Controls.Add(this.loginTab1);
             this.Controls.Add(this.shoppingListTab1);
@@ -1220,7 +1246,6 @@
             this.Controls.Add(this.complaintsTab1);
             this.Controls.Add(this.dashboard1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button6);
             this.Controls.Add(this.tabGeneral);
             this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.panel1);
@@ -1253,6 +1278,7 @@
             this.gbAddAgreement.PerformLayout();
             this.gbViewAgreements.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1340,7 +1366,7 @@
         private System.Windows.Forms.Button btnShowAllAgreements;
         private System.Windows.Forms.ListBox lbAgreements;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel plBorder;
         private System.Windows.Forms.Button btnSchedule;
         private System.Windows.Forms.Button btnShoppingList;
         private System.Windows.Forms.Button btnAgreements;
@@ -1357,6 +1383,8 @@
         private LoginTab loginTab1;
         private AdminTab adminTab1;
         private System.IO.Ports.SerialPort serialPort1;
+        private System.Windows.Forms.Label lblExit;
+        private ScheduleTab scheduleTab1;
     }
 }
 

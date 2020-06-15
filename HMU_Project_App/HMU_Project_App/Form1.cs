@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -29,7 +30,6 @@ namespace HMU_Project_App
             ListRules.Add("No smoking in the building.");
             ListRules.Add("No loud gatherings after 22:00.");
             ListRules.Add("Garbage bin must be taken out on time.");
-            Navigation.Height = btnDashboard.Height;
             dashboard1.BringToFront();
         }
 
@@ -48,6 +48,11 @@ namespace HMU_Project_App
         public static List<int> Amount = new List<int>();
 
         public static string adminPassword = "password";
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")] //code for custom border
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr one, int two, int three, int four);
 
         /*The UpdateRules method clears and then repopulates the lbRules listbox to show updated data.*/
         public void UpdateRules()
@@ -782,13 +787,13 @@ namespace HMU_Project_App
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            Navigation.Height = btnAgreements.Height;
+            
             agreementsTab1.BringToFront();
         }
 
         private void Button5_Click(object sender, EventArgs e)
         {
-
+            scheduleTab1.BringToFront();
         }
 
         private void TabDashboard_Click(object sender, EventArgs e)
@@ -818,19 +823,19 @@ namespace HMU_Project_App
 
         private void BtnDashboard_Click(object sender, EventArgs e)
         {
-            Navigation.Height = btnDashboard.Height;
+            
             dashboard1.BringToFront();
         }
 
         private void BtnComplaints_Click(object sender, EventArgs e)
         {
-            Navigation.Height = btnComplaints.Height;
+            
             complaintsTab1.BringToFront();
         }
 
         private void BtnShoppingList_Click(object sender, EventArgs e)
         {
-            Navigation.Height = btnShoppingList.Height;
+            
             shoppingListTab1.BringToFront();
         }
 
@@ -848,5 +853,16 @@ namespace HMU_Project_App
         {
             
     }
+
+        private void Label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PlBorder_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture(); //controls mouse pressed
+            SendMessage(Handle, 0x112, 0xf012, 0);
+        }
     }
 }

@@ -176,12 +176,11 @@
             // rbCategory
             // 
             this.rbCategory.AutoSize = true;
-            this.rbCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rbCategory.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.rbCategory.Location = new System.Drawing.Point(696, 167);
             this.rbCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rbCategory.Name = "rbCategory";
-            this.rbCategory.Size = new System.Drawing.Size(94, 23);
+            this.rbCategory.Size = new System.Drawing.Size(95, 23);
             this.rbCategory.TabIndex = 36;
             this.rbCategory.TabStop = true;
             this.rbCategory.Text = "Category";
@@ -281,12 +280,11 @@
             // 
             this.rbAll.AutoSize = true;
             this.rbAll.Checked = true;
-            this.rbAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rbAll.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.rbAll.Location = new System.Drawing.Point(696, 89);
             this.rbAll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rbAll.Name = "rbAll";
-            this.rbAll.Size = new System.Drawing.Size(44, 23);
+            this.rbAll.Size = new System.Drawing.Size(45, 23);
             this.rbAll.TabIndex = 26;
             this.rbAll.TabStop = true;
             this.rbAll.Text = "All";
@@ -310,12 +308,11 @@
             // rbMax
             // 
             this.rbMax.AutoSize = true;
-            this.rbMax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rbMax.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.rbMax.Location = new System.Drawing.Point(696, 114);
             this.rbMax.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rbMax.Name = "rbMax";
-            this.rbMax.Size = new System.Drawing.Size(134, 23);
+            this.rbMax.Size = new System.Drawing.Size(135, 23);
             this.rbMax.TabIndex = 27;
             this.rbMax.Text = "Most expensive";
             this.rbMax.UseVisualStyleBackColor = true;
@@ -323,12 +320,11 @@
             // rbMin
             // 
             this.rbMin.AutoSize = true;
-            this.rbMin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rbMin.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.rbMin.Location = new System.Drawing.Point(696, 142);
             this.rbMin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rbMin.Name = "rbMin";
-            this.rbMin.Size = new System.Drawing.Size(97, 23);
+            this.rbMin.Size = new System.Drawing.Size(98, 23);
             this.rbMin.TabIndex = 28;
             this.rbMin.TabStop = true;
             this.rbMin.Text = "Cheapest";

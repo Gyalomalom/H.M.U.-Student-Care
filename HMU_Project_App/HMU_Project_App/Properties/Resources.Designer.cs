@@ -83,6 +83,16 @@ namespace HMU_Project_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_clean_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-clean-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_database_administrator_96 {
             get {
                 object obj = ResourceManager.GetObject("icons8-database-administrator-96", resourceCulture);
@@ -106,6 +116,16 @@ namespace HMU_Project_App.Properties {
         internal static System.Drawing.Bitmap icons8_document_512 {
             get {
                 object obj = ResourceManager.GetObject("icons8-document-512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_exit_52 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-exit-52", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

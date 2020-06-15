@@ -97,6 +97,12 @@
     <Compile Include="ComplaintsTab.Designer.cs">
       <DependentUpon>ComplaintsTab.cs</DependentUpon>
     </Compile>
+    <Compile Include="ScheduleTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ScheduleTab.Designer.cs">
+      <DependentUpon>ScheduleTab.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminTab.resx">
       <DependentUpon>AdminTab.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,6 +134,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ScheduleTab.resx">
+      <DependentUpon>ScheduleTab.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ShoppingListTab.resx">
       <DependentUpon>ShoppingListTab.cs</DependentUpon>
     </EmbeddedResource>
@@ -185,6 +194,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-database-administrator-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-exit-52.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-clean-64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
