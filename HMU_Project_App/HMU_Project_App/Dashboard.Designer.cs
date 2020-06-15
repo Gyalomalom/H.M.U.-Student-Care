@@ -96,10 +96,10 @@
             // pnlGarbage
             // 
             this.pnlGarbage.Controls.Add(this.lblGarbage);
-            this.pnlGarbage.Location = new System.Drawing.Point(499, 320);
+            this.pnlGarbage.Location = new System.Drawing.Point(511, 301);
             this.pnlGarbage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlGarbage.Name = "pnlGarbage";
-            this.pnlGarbage.Size = new System.Drawing.Size(70, 52);
+            this.pnlGarbage.Size = new System.Drawing.Size(234, 71);
             this.pnlGarbage.TabIndex = 5;
             this.pnlGarbage.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlGarbage_Paint);
             // 
@@ -114,11 +114,11 @@
             // lblTemperature
             // 
             this.lblTemperature.AutoSize = true;
-            this.lblTemperature.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblTemperature.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblTemperature.ForeColor = System.Drawing.Color.Gray;
             this.lblTemperature.Location = new System.Drawing.Point(492, 99);
             this.lblTemperature.Name = "lblTemperature";
-            this.lblTemperature.Size = new System.Drawing.Size(114, 40);
+            this.lblTemperature.Size = new System.Drawing.Size(86, 30);
             this.lblTemperature.TabIndex = 7;
             this.lblTemperature.Text = "label1";
             this.lblTemperature.Click += new System.EventHandler(this.LblTemperature_Click);
@@ -178,8 +178,11 @@
             // 
             // timerUpdate
             // 
-            this.timerUpdate.Enabled = true;
             this.timerUpdate.Tick += new System.EventHandler(this.timerUpdate_Tick);
+            // 
+            // TempAndLightPort
+            // 
+            this.TempAndLightPort.PortName = "COM5";
             // 
             // Dashboard
             // 
@@ -191,10 +194,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lblTemperature);
-            this.Controls.Add(this.pnlGarbage);
             this.Controls.Add(this.btnHideRules);
             this.Controls.Add(this.btnViewRules);
             this.Controls.Add(this.lbViewRules);
+            this.Controls.Add(this.pnlGarbage);
             this.Name = "Dashboard";
             this.Size = new System.Drawing.Size(918, 463);
             this.Load += new System.EventHandler(this.Dashboard_Load);

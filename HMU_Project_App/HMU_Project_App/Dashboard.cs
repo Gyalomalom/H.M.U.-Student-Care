@@ -61,8 +61,11 @@ namespace HMU_Project_App
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            //TempAndLightPort.Open();
-            timerUpdate.Enabled = false;
+            /*if (!TempAndLightPort.IsOpen)
+            {
+                TempAndLightPort.Open();
+            }
+            timerUpdate.Enabled = true;*/
         }
 
         private void Label3_Click(object sender, EventArgs e)
@@ -80,7 +83,7 @@ namespace HMU_Project_App
 
                 if (float.TryParse(message, out RealTemp))//see if message is float (only temperature can be converted to int)
                 {
-                    lblTemperature.Text = "The temperature is currently: " + RealTemp + "°C";
+                    lblTemperature.Text = "Temperature: " + RealTemp + " °C";
                 }
                 switch (message) //filter message for strings
                 {

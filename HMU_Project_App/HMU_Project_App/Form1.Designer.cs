@@ -118,15 +118,15 @@
             this.button6 = new System.Windows.Forms.Button();
             this.plBorder = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.btnAdmin = new System.Windows.Forms.Button();
+            this.scheduleTab1 = new HMU_Project_App.ScheduleTab();
             this.adminTab1 = new HMU_Project_App.AdminTab();
             this.loginTab1 = new HMU_Project_App.LoginTab();
             this.shoppingListTab1 = new HMU_Project_App.ShoppingListTab();
             this.agreementsTab1 = new HMU_Project_App.AgreementsTab();
             this.complaintsTab1 = new HMU_Project_App.ComplaintsTab();
             this.dashboard1 = new HMU_Project_App.Dashboard();
-            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.btnAdmin = new System.Windows.Forms.Button();
-            this.scheduleTab1 = new HMU_Project_App.ScheduleTab();
             this.tabGeneral.SuspendLayout();
             this.tabDashboard.SuspendLayout();
             this.pnlGarbage.SuspendLayout();
@@ -1169,6 +1169,26 @@
             this.label1.UseMnemonic = false;
             this.label1.Click += new System.EventHandler(this.Label1_Click_1);
             // 
+            // btnAdmin
+            // 
+            this.btnAdmin.FlatAppearance.BorderSize = 0;
+            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdmin.Image = global::HMU_Project_App.Properties.Resources.icons8_settings_50;
+            this.btnAdmin.Location = new System.Drawing.Point(1070, 29);
+            this.btnAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Size = new System.Drawing.Size(50, 45);
+            this.btnAdmin.TabIndex = 0;
+            this.btnAdmin.UseVisualStyleBackColor = true;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
+            // 
+            // scheduleTab1
+            // 
+            this.scheduleTab1.Location = new System.Drawing.Point(214, 123);
+            this.scheduleTab1.Name = "scheduleTab1";
+            this.scheduleTab1.Size = new System.Drawing.Size(918, 463);
+            this.scheduleTab1.TabIndex = 15;
+            // 
             // adminTab1
             // 
             this.adminTab1.Location = new System.Drawing.Point(214, 123);
@@ -1212,26 +1232,6 @@
             this.dashboard1.Size = new System.Drawing.Size(918, 463);
             this.dashboard1.TabIndex = 9;
             // 
-            // btnAdmin
-            // 
-            this.btnAdmin.FlatAppearance.BorderSize = 0;
-            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdmin.Image = global::HMU_Project_App.Properties.Resources.icons8_settings_50;
-            this.btnAdmin.Location = new System.Drawing.Point(1070, 29);
-            this.btnAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(50, 45);
-            this.btnAdmin.TabIndex = 0;
-            this.btnAdmin.UseVisualStyleBackColor = true;
-            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
-            // 
-            // scheduleTab1
-            // 
-            this.scheduleTab1.Location = new System.Drawing.Point(214, 123);
-            this.scheduleTab1.Name = "scheduleTab1";
-            this.scheduleTab1.Size = new System.Drawing.Size(918, 463);
-            this.scheduleTab1.TabIndex = 15;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1254,6 +1254,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabGeneral.ResumeLayout(false);
             this.tabDashboard.ResumeLayout(false);

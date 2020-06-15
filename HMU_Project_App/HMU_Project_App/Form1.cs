@@ -864,5 +864,13 @@ namespace HMU_Project_App
             ReleaseCapture(); //controls mouse pressed
             SendMessage(Handle, 0x112, 0xf012, 0);
         }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (TempAndLightPort.IsOpen)
+            {
+                TempAndLightPort.Close();
+            }
+        }
     }
 }
