@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HMU_Project_App.Properties;
 
 /*This application is part of the H.M.U. (Housmate Management Utility) project designed by
 group 6 for the Advanced Phase Software Engineering course at Fontys University of Applied Sciences
@@ -871,6 +872,38 @@ namespace HMU_Project_App
             {
                 TempAndLightPort.Close();
             }
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void ScheduleTab1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit(); //button to exit application
+        }
+
+        private void BtnMax_Click(object sender, EventArgs e) //button which controls window size
+        {
+            if(WindowState == FormWindowState.Normal)
+            {
+                WindowState = FormWindowState.Maximized;
+                btnMax.Image = Resources.noun_minimize_1269338;
+            }
+            else
+                WindowState = FormWindowState.Normal;
+                btnMax.Image = Resources.noun_maximize_2042437;
+        }
+
+        private void LblExit_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

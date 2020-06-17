@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -200,6 +203,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-clean-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\noun_X_2500111.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\noun_X_25001111.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\noun_minimize_1601614.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\noun_minimize_1269338.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\noun_maximize_2042437.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

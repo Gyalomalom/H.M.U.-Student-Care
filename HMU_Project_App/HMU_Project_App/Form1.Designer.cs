@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabGeneral = new System.Windows.Forms.TabControl();
             this.tabDashboard = new System.Windows.Forms.TabPage();
             this.lblTemperature = new System.Windows.Forms.Label();
@@ -109,6 +110,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblExit = new System.Windows.Forms.Label();
             this.Navigation = new System.Windows.Forms.Panel();
+            this.plBorder = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.btnMax = new System.Windows.Forms.Button();
+            this.btnMin = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnAdmin = new System.Windows.Forms.Button();
             this.btnSchedule = new System.Windows.Forms.Button();
             this.btnShoppingList = new System.Windows.Forms.Button();
             this.btnAgreements = new System.Windows.Forms.Button();
@@ -116,10 +124,6 @@
             this.btnDashboard = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button6 = new System.Windows.Forms.Button();
-            this.plBorder = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.btnAdmin = new System.Windows.Forms.Button();
             this.scheduleTab1 = new HMU_Project_App.ScheduleTab();
             this.adminTab1 = new HMU_Project_App.AdminTab();
             this.loginTab1 = new HMU_Project_App.LoginTab();
@@ -141,6 +145,7 @@
             this.gbAddAgreement.SuspendLayout();
             this.gbViewAgreements.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.plBorder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -1024,6 +1029,7 @@
             // 
             // lblExit
             // 
+            this.lblExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblExit.AutoSize = true;
             this.lblExit.BackColor = System.Drawing.Color.Transparent;
             this.lblExit.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -1033,14 +1039,96 @@
             this.lblExit.Size = new System.Drawing.Size(39, 22);
             this.lblExit.TabIndex = 8;
             this.lblExit.Text = "Exit";
+            this.lblExit.Click += new System.EventHandler(this.LblExit_Click);
             // 
             // Navigation
             // 
+            this.Navigation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Navigation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(252)))), ((int)(((byte)(136)))));
             this.Navigation.Location = new System.Drawing.Point(25, 500);
             this.Navigation.Name = "Navigation";
             this.Navigation.Size = new System.Drawing.Size(167, 1);
             this.Navigation.TabIndex = 5;
+            // 
+            // plBorder
+            // 
+            this.plBorder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(252)))), ((int)(((byte)(136)))));
+            this.plBorder.Controls.Add(this.btnMax);
+            this.plBorder.Controls.Add(this.btnMin);
+            this.plBorder.Controls.Add(this.btnClose);
+            this.plBorder.Dock = System.Windows.Forms.DockStyle.Top;
+            this.plBorder.Location = new System.Drawing.Point(211, 0);
+            this.plBorder.Name = "plBorder";
+            this.plBorder.Size = new System.Drawing.Size(921, 35);
+            this.plBorder.TabIndex = 0;
+            this.plBorder.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PlBorder_MouseDown);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.Color.Gray;
+            this.label1.Location = new System.Drawing.Point(217, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(225, 23);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "STUDENT HOUSE SYSTEM";
+            this.label1.UseMnemonic = false;
+            this.label1.Click += new System.EventHandler(this.Label1_Click_1);
+            // 
+            // btnMax
+            // 
+            this.btnMax.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnMax.FlatAppearance.BorderSize = 0;
+            this.btnMax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMax.Image = global::HMU_Project_App.Properties.Resources.noun_maximize_2042437;
+            this.btnMax.Location = new System.Drawing.Point(823, 0);
+            this.btnMax.Name = "btnMax";
+            this.btnMax.Size = new System.Drawing.Size(49, 35);
+            this.btnMax.TabIndex = 19;
+            this.btnMax.UseVisualStyleBackColor = true;
+            this.btnMax.Click += new System.EventHandler(this.BtnMax_Click);
+            // 
+            // btnMin
+            // 
+            this.btnMin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMin.FlatAppearance.BorderSize = 0;
+            this.btnMin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMin.Image = global::HMU_Project_App.Properties.Resources.noun_minimize_1269338;
+            this.btnMin.Location = new System.Drawing.Point(777, 0);
+            this.btnMin.Name = "btnMin";
+            this.btnMin.Size = new System.Drawing.Size(49, 35);
+            this.btnMin.TabIndex = 18;
+            this.btnMin.UseVisualStyleBackColor = true;
+            this.btnMin.Click += new System.EventHandler(this.Button2_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Image = global::HMU_Project_App.Properties.Resources.noun_X_25001111;
+            this.btnClose.Location = new System.Drawing.Point(872, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(49, 35);
+            this.btnClose.TabIndex = 16;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
+            // 
+            // btnAdmin
+            // 
+            this.btnAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdmin.FlatAppearance.BorderSize = 0;
+            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdmin.Image = global::HMU_Project_App.Properties.Resources.icons8_settings_50;
+            this.btnAdmin.Location = new System.Drawing.Point(1083, 44);
+            this.btnAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Size = new System.Drawing.Size(50, 45);
+            this.btnAdmin.TabIndex = 0;
+            this.btnAdmin.UseVisualStyleBackColor = true;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
             // btnSchedule
             // 
@@ -1134,6 +1222,7 @@
             // 
             // button6
             // 
+            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -1146,48 +1235,16 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.Button6_Click);
             // 
-            // plBorder
-            // 
-            this.plBorder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(252)))), ((int)(((byte)(136)))));
-            this.plBorder.Dock = System.Windows.Forms.DockStyle.Top;
-            this.plBorder.Location = new System.Drawing.Point(211, 0);
-            this.plBorder.Name = "plBorder";
-            this.plBorder.Size = new System.Drawing.Size(921, 24);
-            this.plBorder.TabIndex = 0;
-            this.plBorder.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PlBorder_MouseDown);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(217, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(225, 23);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "STUDENT HOUSE SYSTEM";
-            this.label1.UseMnemonic = false;
-            this.label1.Click += new System.EventHandler(this.Label1_Click_1);
-            // 
-            // btnAdmin
-            // 
-            this.btnAdmin.FlatAppearance.BorderSize = 0;
-            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdmin.Image = global::HMU_Project_App.Properties.Resources.icons8_settings_50;
-            this.btnAdmin.Location = new System.Drawing.Point(1070, 29);
-            this.btnAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(50, 45);
-            this.btnAdmin.TabIndex = 0;
-            this.btnAdmin.UseVisualStyleBackColor = true;
-            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
-            // 
             // scheduleTab1
             // 
+            this.scheduleTab1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.scheduleTab1.Location = new System.Drawing.Point(214, 123);
             this.scheduleTab1.Name = "scheduleTab1";
             this.scheduleTab1.Size = new System.Drawing.Size(918, 463);
             this.scheduleTab1.TabIndex = 15;
+            this.scheduleTab1.Load += new System.EventHandler(this.ScheduleTab1_Load);
             // 
             // adminTab1
             // 
@@ -1250,6 +1307,7 @@
             this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1280,6 +1338,7 @@
             this.gbViewAgreements.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.plBorder.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1386,6 +1445,9 @@
         private System.IO.Ports.SerialPort serialPort1;
         private System.Windows.Forms.Label lblExit;
         private ScheduleTab scheduleTab1;
+        private System.Windows.Forms.Button btnMin;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnMax;
     }
 }
 
