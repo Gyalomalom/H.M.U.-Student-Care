@@ -34,8 +34,8 @@
             this.tbCurrentPass = new System.Windows.Forms.TextBox();
             this.lblNewPass = new System.Windows.Forms.Label();
             this.lblOldPass = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pbChangePass = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbChangePass)).BeginInit();
             this.SuspendLayout();
             // 
             // cbShowPass
@@ -112,18 +112,18 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::HMU_Project_App.Properties.Resources.icons8_administrative_tools_100;
-            this.pictureBox1.Location = new System.Drawing.Point(396, 45);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(117, 118);
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
+            this.pbChangePass.Image = global::HMU_Project_App.Properties.Resources.icons8_administrative_tools_100;
+            this.pbChangePass.Location = new System.Drawing.Point(396, 45);
+            this.pbChangePass.Name = "pictureBox1";
+            this.pbChangePass.Size = new System.Drawing.Size(117, 118);
+            this.pbChangePass.TabIndex = 12;
+            this.pbChangePass.TabStop = false;
             // 
             // PassChange
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbChangePass);
             this.Controls.Add(this.cbShowPass);
             this.Controls.Add(this.btnSetNewPass);
             this.Controls.Add(this.tbNewPass);
@@ -132,8 +132,7 @@
             this.Controls.Add(this.lblOldPass);
             this.Name = "PassChange";
             this.Size = new System.Drawing.Size(918, 463);
-            this.Load += new System.EventHandler(this.PassChange_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbChangePass)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,6 +146,6 @@
         private System.Windows.Forms.TextBox tbCurrentPass;
         private System.Windows.Forms.Label lblNewPass;
         private System.Windows.Forms.Label lblOldPass;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbChangePass;
     }
 }

@@ -33,7 +33,7 @@
             this.btnAcceptAgreement = new System.Windows.Forms.Button();
             this.btnAddAgreement = new System.Windows.Forms.Button();
             this.tbAgreementInfo = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblAgreements = new System.Windows.Forms.Label();
             this.btnRemoveAgreement = new System.Windows.Forms.Button();
             this.btnShowAcceptedAgreement = new System.Windows.Forms.Button();
             this.btnShowAllAgreements = new System.Windows.Forms.Button();
@@ -106,14 +106,14 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(68, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 29);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Agreements";
+            this.lblAgreements.AutoSize = true;
+            this.lblAgreements.Font = new System.Drawing.Font("Bahnschrift", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblAgreements.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblAgreements.Location = new System.Drawing.Point(68, 21);
+            this.lblAgreements.Name = "label1";
+            this.lblAgreements.Size = new System.Drawing.Size(145, 29);
+            this.lblAgreements.TabIndex = 19;
+            this.lblAgreements.Text = "Agreements";
             // 
             // btnRemoveAgreement
             // 
@@ -165,7 +165,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblAgreements);
             this.Controls.Add(this.btnRemoveAgreement);
             this.Controls.Add(this.lblAgreement);
             this.Controls.Add(this.btnAcceptAgreement);
@@ -187,7 +187,7 @@
         private System.Windows.Forms.Button btnAcceptAgreement;
         private System.Windows.Forms.Button btnAddAgreement;
         private System.Windows.Forms.TextBox tbAgreementInfo;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblAgreements;
         private System.Windows.Forms.Button btnRemoveAgreement;
         private System.Windows.Forms.Button btnShowAcceptedAgreement;
         private System.Windows.Forms.Button btnShowAllAgreements;

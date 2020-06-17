@@ -22,7 +22,7 @@ namespace HMU_Project_App
         {
             lbAgreements.Items.Clear();
 
-            foreach (string value in Form1.Agreements)
+            foreach (string value in HMU_MainForm.Agreements)
             {
                 lbAgreements.Items.Add($"{value}");
             }
@@ -32,7 +32,7 @@ namespace HMU_Project_App
 
             string agreement = tbAgreementInfo.Text;
 
-            Form1.Agreements.Add(agreement);
+            HMU_MainForm.Agreements.Add(agreement);
 
             UpdateAgreements();
         }
@@ -41,12 +41,13 @@ namespace HMU_Project_App
         {
             UpdateAgreements();
         }
-
+        
+        /*refresh the agreements listbox with all the values from the AcceptedAgreements list*/
         private void BtnShowAcceptedAgreement_Click(object sender, EventArgs e)
         {
             lbAgreements.Items.Clear();
 
-            foreach (string value in Form1.AcceptedAgreements)
+            foreach (string value in HMU_MainForm.AcceptedAgreements)
             {
                 lbAgreements.Items.Add(value + " : Accepted");
             }
@@ -64,14 +65,15 @@ namespace HMU_Project_App
                 MessageBox.Show("Areement field is empty. Please write an agreement.");
             }
         }
-
+        
+        /*Add an agreement to the AcceptedAgreemnts list*/
         private void BtnAcceptAgreement_Click(object sender, EventArgs e)
         {
             string accepted = (string)lbAgreements.SelectedItem;
 
             if (accepted != null)
             {
-                Form1.AcceptedAgreements.Add(accepted);
+                HMU_MainForm.AcceptedAgreements.Add(accepted);
             }
             else
             {
@@ -90,19 +92,19 @@ namespace HMU_Project_App
             else
             {
                 string selectedAgreement = lbAgreements.Items[selectedAgreementIndex].ToString();
-                for (index = 0; index <= Form1.Agreements.Count - 1; index++)
+                for (index = 0; index <= HMU_MainForm.Agreements.Count - 1; index++)
                 {
-                    if (selectedAgreement == Form1.Agreements[index])
+                    if (selectedAgreement == HMU_MainForm.Agreements[index])
                     {
-                        Form1.Agreements.RemoveAt(index);
+                        HMU_MainForm.Agreements.RemoveAt(index);
                     }
                 }
 
-                for (index = 0; index <= Form1.AcceptedAgreements.Count - 1; index++)
+                for (index = 0; index <= HMU_MainForm.AcceptedAgreements.Count - 1; index++)
                 {
-                    if (selectedAgreement == Form1.AcceptedAgreements[index])
+                    if (selectedAgreement == HMU_MainForm.AcceptedAgreements[index])
                     {
-                        Form1.AcceptedAgreements.RemoveAt(index);
+                        HMU_MainForm.AcceptedAgreements.RemoveAt(index);
                     }
                 }
 
@@ -133,7 +135,7 @@ namespace HMU_Project_App
         {
             lbAgreements.Items.Clear();
 
-            foreach (string value in Form1.AcceptedAgreements)
+            foreach (string value in HMU_MainForm.AcceptedAgreements)
             {
                 lbAgreements.Items.Add(value + " : Accepted");
             }
@@ -145,7 +147,7 @@ namespace HMU_Project_App
 
             if (accepted != null)
             {
-                Form1.AcceptedAgreements.Add(accepted);
+                HMU_MainForm.AcceptedAgreements.Add(accepted);
             }
             else
             {
@@ -164,19 +166,19 @@ namespace HMU_Project_App
             else
             {
                 string selectedAgreement = lbAgreements.Items[selectedAgreementIndex].ToString();
-                for (index = 0; index <= Form1.Agreements.Count - 1; index++)
+                for (index = 0; index <= HMU_MainForm.Agreements.Count - 1; index++)
                 {
-                    if (selectedAgreement == Form1.Agreements[index])
+                    if (selectedAgreement == HMU_MainForm.Agreements[index])
                     {
-                        Form1.Agreements.RemoveAt(index);
+                        HMU_MainForm.Agreements.RemoveAt(index);
                     }
                 }
 
-                for (index = 0; index <= Form1.AcceptedAgreements.Count - 1; index++)
+                for (index = 0; index <= HMU_MainForm.AcceptedAgreements.Count - 1; index++)
                 {
-                    if (selectedAgreement == Form1.AcceptedAgreements[index])
+                    if (selectedAgreement == HMU_MainForm.AcceptedAgreements[index])
                     {
-                        Form1.AcceptedAgreements.RemoveAt(index);
+                        HMU_MainForm.AcceptedAgreements.RemoveAt(index);
                     }
                 }
 

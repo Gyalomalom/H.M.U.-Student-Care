@@ -31,8 +31,8 @@
             this.btnAddComplaint = new System.Windows.Forms.Button();
             this.tbComplaints = new System.Windows.Forms.TextBox();
             this.lblEnterComplaints = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pbComplaints = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbComplaints)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddComplaint
@@ -60,7 +60,6 @@
             this.tbComplaints.Name = "tbComplaints";
             this.tbComplaints.Size = new System.Drawing.Size(228, 23);
             this.tbComplaints.TabIndex = 4;
-            this.tbComplaints.TextChanged += new System.EventHandler(this.TbComplaints_TextChanged);
             // 
             // lblEnterComplaints
             // 
@@ -75,25 +74,25 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::HMU_Project_App.Properties.Resources.icons8_document_512;
-            this.pictureBox1.Location = new System.Drawing.Point(599, 95);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(208, 239);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.pbComplaints.Image = global::HMU_Project_App.Properties.Resources.icons8_document_512;
+            this.pbComplaints.Location = new System.Drawing.Point(599, 95);
+            this.pbComplaints.Name = "pictureBox1";
+            this.pbComplaints.Size = new System.Drawing.Size(208, 239);
+            this.pbComplaints.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbComplaints.TabIndex = 6;
+            this.pbComplaints.TabStop = false;
             // 
             // ComplaintsTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbComplaints);
             this.Controls.Add(this.btnAddComplaint);
             this.Controls.Add(this.tbComplaints);
             this.Controls.Add(this.lblEnterComplaints);
             this.Name = "ComplaintsTab";
             this.Size = new System.Drawing.Size(918, 463);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbComplaints)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -104,6 +103,6 @@
         private System.Windows.Forms.Button btnAddComplaint;
         private System.Windows.Forms.TextBox tbComplaints;
         private System.Windows.Forms.Label lblEnterComplaints;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbComplaints;
     }
 }

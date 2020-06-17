@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HMU_Project_App
@@ -19,60 +13,45 @@ namespace HMU_Project_App
             
         }
 
-
+        /*Method adds every element in the list to th elistbox*/
         public void ViewRules()
         {
             lbViewRules.Items.Clear();
             int index = 0;
-            foreach (string value in Form1.ListRules)
+            foreach (string value in HMU_MainForm.ListRules)
             {
-                lbViewRules.Items.Add(Form1.ListRules[index]);
+                lbViewRules.Items.Add(HMU_MainForm.ListRules[index]);
                 index++;
             }
         }
 
+        /*Following buttons either fill the listbox or clear it*/
         private void BtnViewRules_Click(object sender, EventArgs e)
         {
             ViewRules();
         }
 
 
-        public void LbViewRules_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void BtnHideRules_Click(object sender, EventArgs e)
         {
             lbViewRules.Items.Clear();
         }
 
-        private void LblTemperature_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        
-
-        private void PnlGarbage_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+       
+        /*On dashboard load, if port is not open, open it. Also enable the timer if it is not yet enabled*/
         private void Dashboard_Load(object sender, EventArgs e)
         {
             /*if (!TempAndLightPort.IsOpen)
             {
                 TempAndLightPort.Open();
             }
+            if (!timerUpdate.Enabled)
             timerUpdate.Enabled = true;*/
         }
 
-        private void Label3_Click(object sender, EventArgs e)
-        {
-            
-        }
-
+        
+        /*On timer tick event, read the message from the serial port. If it is a float, update the temperature label. Otherwise,
+        update the garbage label and panel with appropriate text and color depicting the garbage status based on the text from the serial port*/
         private void timerUpdate_Tick(object sender, EventArgs e)
         {
             if (TempAndLightPort.BytesToRead > 0)

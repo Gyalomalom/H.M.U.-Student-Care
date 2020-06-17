@@ -32,8 +32,8 @@
             this.btnCleaned = new System.Windows.Forms.Button();
             this.lbCleaningTime = new System.Windows.Forms.ListBox();
             this.cbRooms = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pbSchedule = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSchedule)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -95,19 +95,19 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::HMU_Project_App.Properties.Resources.icons8_clean_64;
-            this.pictureBox1.Location = new System.Drawing.Point(679, 175);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(143, 143);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 30;
-            this.pictureBox1.TabStop = false;
+            this.pbSchedule.Image = global::HMU_Project_App.Properties.Resources.icons8_clean_64;
+            this.pbSchedule.Location = new System.Drawing.Point(679, 175);
+            this.pbSchedule.Name = "pictureBox1";
+            this.pbSchedule.Size = new System.Drawing.Size(143, 143);
+            this.pbSchedule.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbSchedule.TabIndex = 30;
+            this.pbSchedule.TabStop = false;
             // 
             // ScheduleTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbSchedule);
             this.Controls.Add(this.cbRooms);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCleaned);
@@ -115,7 +115,7 @@
             this.Name = "ScheduleTab";
             this.Size = new System.Drawing.Size(918, 463);
             this.Load += new System.EventHandler(this.ScheduleTab_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSchedule)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,6 +127,6 @@
         private System.Windows.Forms.Button btnCleaned;
         private System.Windows.Forms.ListBox lbCleaningTime;
         private System.Windows.Forms.ComboBox cbRooms;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbSchedule;
     }
 }

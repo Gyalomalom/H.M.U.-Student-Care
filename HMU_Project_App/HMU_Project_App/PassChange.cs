@@ -12,16 +12,18 @@ namespace HMU_Project_App
 {
     public partial class PassChange : UserControl
     {
+        /*On initialization we make sure this doesn't show over the admin tab*/
         public PassChange()
         {
             InitializeComponent();
             this.SendToBack();
         }
 
-
+        /*Makes sure old password is entered correctly, compares it to new password and if it is different, changes the value
+        of the password variable in the main form to the new value*/
         private void BtnSetNewPass_Click(object sender, EventArgs e)
         {
-            if (tbCurrentPass.Text == Form1.adminPassword)
+            if (tbCurrentPass.Text == HMU_MainForm.adminPassword)
             {
                 if (tbCurrentPass.Text == tbNewPass.Text)
                 {
@@ -31,7 +33,7 @@ namespace HMU_Project_App
                 }
                 else if ((!String.IsNullOrWhiteSpace(tbCurrentPass.Text)) && (!String.IsNullOrWhiteSpace(tbNewPass.Text)))
                 {
-                    Form1.adminPassword = tbNewPass.Text;
+                    HMU_MainForm.adminPassword = tbNewPass.Text;
                     MessageBox.Show("Password changed successfully.");
                     tbCurrentPass.Text = "";
                     tbNewPass.Text = "";
@@ -52,11 +54,7 @@ namespace HMU_Project_App
             }
         }
 
-        private void PassChange_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        /*Obscures the password values when checked*/
         private void cbShowPass_CheckedChanged(object sender, EventArgs e)
         {
             if (cbShowPass.Checked)

@@ -31,8 +31,8 @@
             this.btnAdminLogin = new System.Windows.Forms.Button();
             this.lblAdminPass = new System.Windows.Forms.Label();
             this.tbAdminPass = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pbLogin = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogin)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdminLogin
@@ -71,30 +71,28 @@
             this.tbAdminPass.PasswordChar = '*';
             this.tbAdminPass.Size = new System.Drawing.Size(106, 21);
             this.tbAdminPass.TabIndex = 4;
-            this.tbAdminPass.TextChanged += new System.EventHandler(this.TbAdminPass_TextChanged);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::HMU_Project_App.Properties.Resources.icons8_administrative_tools_100;
-            this.pictureBox1.Location = new System.Drawing.Point(413, 68);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(129, 131);
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
+            this.pbLogin.Image = global::HMU_Project_App.Properties.Resources.icons8_administrative_tools_100;
+            this.pbLogin.Location = new System.Drawing.Point(413, 68);
+            this.pbLogin.Name = "pictureBox1";
+            this.pbLogin.Size = new System.Drawing.Size(129, 131);
+            this.pbLogin.TabIndex = 7;
+            this.pbLogin.TabStop = false;
             // 
             // LoginTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbLogin);
             this.Controls.Add(this.btnAdminLogin);
             this.Controls.Add(this.lblAdminPass);
             this.Controls.Add(this.tbAdminPass);
             this.ForeColor = System.Drawing.Color.Gray;
             this.Name = "LoginTab";
             this.Size = new System.Drawing.Size(918, 463);
-            this.Load += new System.EventHandler(this.LoginTab_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -105,6 +103,6 @@
         private System.Windows.Forms.Button btnAdminLogin;
         private System.Windows.Forms.Label lblAdminPass;
         private System.Windows.Forms.TextBox tbAdminPass;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbLogin;
     }
 }

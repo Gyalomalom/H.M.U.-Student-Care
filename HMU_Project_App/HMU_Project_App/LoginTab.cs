@@ -12,6 +12,7 @@ namespace HMU_Project_App
 {
     public partial class LoginTab : UserControl
     {
+        /*When we initialize the tab we also clear the password window*/
         public LoginTab()
         {
             InitializeComponent();
@@ -19,10 +20,10 @@ namespace HMU_Project_App
         }
 
 
-
+        /*Exception handling for empty fields or wrong password. On success, field is cleared and this is sent to back, allowing the user to acess admin tab*/
         private void BtnAdminLogin_Click(object sender, EventArgs e)
         {
-            if (tbAdminPass.Text == Form1.adminPassword)
+            if (tbAdminPass.Text == HMU_MainForm.adminPassword)
             {
                 this.SendToBack();
                 tbAdminPass.Text = "";
@@ -38,16 +39,6 @@ namespace HMU_Project_App
                 MessageBox.Show("You've entered the wrong password. Please try again.");
                 tbAdminPass.Text = "";
             }
-        }
-
-        private void TbAdminPass_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LoginTab_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

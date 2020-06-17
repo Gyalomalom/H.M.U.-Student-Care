@@ -36,15 +36,15 @@
             this.lblGarbage = new System.Windows.Forms.Label();
             this.lblTemperature = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblTemp = new System.Windows.Forms.Label();
+            this.lblGarbageStatus = new System.Windows.Forms.Label();
             this.pbTrash = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbTemp = new System.Windows.Forms.PictureBox();
             this.timerUpdate = new System.Windows.Forms.Timer(this.components);
             this.TempAndLightPort = new System.IO.Ports.SerialPort(this.components);
             this.pnlGarbage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbTrash)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTemp)).BeginInit();
             this.SuspendLayout();
             // 
             // lbViewRules
@@ -59,7 +59,6 @@
             this.lbViewRules.Name = "lbViewRules";
             this.lbViewRules.Size = new System.Drawing.Size(400, 273);
             this.lbViewRules.TabIndex = 2;
-            this.lbViewRules.SelectedIndexChanged += new System.EventHandler(this.LbViewRules_SelectedIndexChanged);
             // 
             // btnViewRules
             // 
@@ -101,7 +100,6 @@
             this.pnlGarbage.Name = "pnlGarbage";
             this.pnlGarbage.Size = new System.Drawing.Size(234, 71);
             this.pnlGarbage.TabIndex = 5;
-            this.pnlGarbage.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlGarbage_Paint);
             // 
             // lblGarbage
             // 
@@ -121,7 +119,6 @@
             this.lblTemperature.Size = new System.Drawing.Size(86, 30);
             this.lblTemperature.TabIndex = 7;
             this.lblTemperature.Text = "label1";
-            this.lblTemperature.Click += new System.EventHandler(this.LblTemperature_Click);
             // 
             // lblTitle
             // 
@@ -136,25 +133,25 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(491, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(235, 46);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Temperature";
+            this.lblTemp.AutoSize = true;
+            this.lblTemp.Font = new System.Drawing.Font("Bahnschrift", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblTemp.ForeColor = System.Drawing.Color.Black;
+            this.lblTemp.Location = new System.Drawing.Point(491, 33);
+            this.lblTemp.Name = "label1";
+            this.lblTemp.Size = new System.Drawing.Size(235, 46);
+            this.lblTemp.TabIndex = 9;
+            this.lblTemp.Text = "Temperature";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Bahnschrift", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(491, 229);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(277, 46);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Garbage status";
+            this.lblGarbageStatus.AutoSize = true;
+            this.lblGarbageStatus.Font = new System.Drawing.Font("Bahnschrift", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblGarbageStatus.ForeColor = System.Drawing.Color.Black;
+            this.lblGarbageStatus.Location = new System.Drawing.Point(491, 229);
+            this.lblGarbageStatus.Name = "label2";
+            this.lblGarbageStatus.Size = new System.Drawing.Size(277, 46);
+            this.lblGarbageStatus.TabIndex = 10;
+            this.lblGarbageStatus.Text = "Garbage status";
             // 
             // pbTrash
             // 
@@ -168,13 +165,13 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::HMU_Project_App.Properties.Resources.icons8_temperature_96;
-            this.pictureBox1.Location = new System.Drawing.Point(768, 33);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(135, 158);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
+            this.pbTemp.Image = global::HMU_Project_App.Properties.Resources.icons8_temperature_96;
+            this.pbTemp.Location = new System.Drawing.Point(768, 33);
+            this.pbTemp.Name = "pictureBox1";
+            this.pbTemp.Size = new System.Drawing.Size(135, 158);
+            this.pbTemp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbTemp.TabIndex = 11;
+            this.pbTemp.TabStop = false;
             // 
             // timerUpdate
             // 
@@ -189,9 +186,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pbTrash);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pbTemp);
+            this.Controls.Add(this.lblGarbageStatus);
+            this.Controls.Add(this.lblTemp);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lblTemperature);
             this.Controls.Add(this.btnHideRules);
@@ -204,7 +201,7 @@
             this.pnlGarbage.ResumeLayout(false);
             this.pnlGarbage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbTrash)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTemp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,9 +216,9 @@
         private System.Windows.Forms.Label lblGarbage;
         private System.Windows.Forms.Label lblTemperature;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblTemp;
+        private System.Windows.Forms.Label lblGarbageStatus;
+        private System.Windows.Forms.PictureBox pbTemp;
         private System.Windows.Forms.PictureBox pbTrash;
         private System.Windows.Forms.Timer timerUpdate;
         private System.IO.Ports.SerialPort TempAndLightPort;

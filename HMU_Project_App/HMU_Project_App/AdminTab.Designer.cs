@@ -36,10 +36,10 @@
             this.btnAddRule = new System.Windows.Forms.Button();
             this.lbComplaints = new System.Windows.Forms.ListBox();
             this.lbRules = new System.Windows.Forms.ListBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.passChange1 = new HMU_Project_App.PassChange();
-            this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pbAdmin = new System.Windows.Forms.PictureBox();
+            this.tabPassChange = new HMU_Project_App.PassChange();
+            this.pnlAdmin = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAdmin)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDeleteRule
@@ -154,34 +154,35 @@
             this.lbRules.Size = new System.Drawing.Size(360, 180);
             this.lbRules.TabIndex = 9;
             // 
-            // pictureBox1
+            // pbAdmin
             // 
-            this.pictureBox1.Image = global::HMU_Project_App.Properties.Resources.icons8_database_administrator_96;
-            this.pictureBox1.Location = new System.Drawing.Point(787, 302);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(170, 129);
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
+            this.pbAdmin.Image = global::HMU_Project_App.Properties.Resources.icons8_database_administrator_96;
+            this.pbAdmin.Location = new System.Drawing.Point(787, 302);
+            this.pbAdmin.Name = "pbAdmin";
+            this.pbAdmin.Size = new System.Drawing.Size(170, 129);
+            this.pbAdmin.TabIndex = 17;
+            this.pbAdmin.TabStop = false;
             // 
-            // passChange1
+            // tabPassChange
             // 
-            this.passChange1.Location = new System.Drawing.Point(0, 0);
-            this.passChange1.Name = "passChange1";
-            this.passChange1.Size = new System.Drawing.Size(922, 460);
-            this.passChange1.TabIndex = 18;
+            this.tabPassChange.Location = new System.Drawing.Point(0, 0);
+            this.tabPassChange.Name = "tabPassChange";
+            this.tabPassChange.Size = new System.Drawing.Size(922, 460);
+            this.tabPassChange.TabIndex = 18;
+            this.tabPassChange.Enter += new System.EventHandler(this.tabPassChange_Enter);
             // 
-            // panel1
+            // pnlAdmin
             // 
-            this.panel1.Location = new System.Drawing.Point(0, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(915, 457);
-            this.panel1.TabIndex = 19;
+            this.pnlAdmin.Location = new System.Drawing.Point(3, 19);
+            this.pnlAdmin.Name = "pnlAdmin";
+            this.pnlAdmin.Size = new System.Drawing.Size(912, 441);
+            this.pnlAdmin.TabIndex = 19;
             // 
             // AdminTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbAdmin);
             this.Controls.Add(this.btnDeleteRule);
             this.Controls.Add(this.btnPassChange);
             this.Controls.Add(this.btnReadComplaints);
@@ -190,12 +191,12 @@
             this.Controls.Add(this.btnAddRule);
             this.Controls.Add(this.lbComplaints);
             this.Controls.Add(this.lbRules);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.passChange1);
+            this.Controls.Add(this.pnlAdmin);
+            this.Controls.Add(this.tabPassChange);
             this.Name = "AdminTab";
             this.Size = new System.Drawing.Size(918, 463);
             this.Load += new System.EventHandler(this.AdminTab_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAdmin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,8 +212,8 @@
         private System.Windows.Forms.Button btnAddRule;
         private System.Windows.Forms.ListBox lbComplaints;
         private System.Windows.Forms.ListBox lbRules;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private PassChange passChange1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pbAdmin;
+        private PassChange tabPassChange;
+        private System.Windows.Forms.Panel pnlAdmin;
     }
 }

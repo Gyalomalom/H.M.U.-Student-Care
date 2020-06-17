@@ -34,7 +34,7 @@ namespace HMU_Project_App
         }
         private void ShoppingList() //method to display the items in the shopping list
         {
-            int b = Form1.Items.Count();
+            int b = HMU_MainForm.Items.Count();
             lbShoppingList.Items.Clear();
             lblTotalPrice.Text = GetTotal() + " €";
 
@@ -47,21 +47,21 @@ namespace HMU_Project_App
 
         private String ShoppingInfo(int a) //a method for creating the strings displayed in the shopping list
         {
-            String info = Form1.Items[a] + "\t" + Form1.Amount[a] + "\t" + (Form1.Prices[a] * Form1.Amount[a]).ToString("0.00") + " €" + "\t" + Form1.Categ[a];
+            String info = HMU_MainForm.Items[a] + "\t" + HMU_MainForm.Amount[a] + "\t" + (HMU_MainForm.Prices[a] * HMU_MainForm.Amount[a]).ToString("0.00") + " €" + "\t" + HMU_MainForm.Categ[a];
             return info;
         }
 
         private void ShowMax() //method for displaying the most expensive items
         {
             lbShoppingList.Items.Clear();
-            double max = Form1.Prices.Max();
-            int a = Form1.Items.Count();
+            double max = HMU_MainForm.Prices.Max();
+            int a = HMU_MainForm.Items.Count();
 
             for (int i = 0; i < a; i++)
             {
-                if (Form1.Prices[i] == max)
+                if (HMU_MainForm.Prices[i] == max)
                 {
-                    String maxadd = Form1.Items[i] + "\t" + Form1.Amount[i] + "\t" + (Form1.Prices[i] * Form1.Amount[i]).ToString("0.00") + " €" + "\t" + Form1.Categ[i];
+                    String maxadd = HMU_MainForm.Items[i] + "\t" + HMU_MainForm.Amount[i] + "\t" + (HMU_MainForm.Prices[i] * HMU_MainForm.Amount[i]).ToString("0.00") + " €" + "\t" + HMU_MainForm.Categ[i];
                     lbShoppingList.Items.Add(maxadd);
                 }
             }
@@ -70,14 +70,14 @@ namespace HMU_Project_App
         private void ShowMin() //method for displaying the cheapest items
         {
             lbShoppingList.Items.Clear();
-            double min = Form1.Prices.Min();
-            int a = Form1.Items.Count();
+            double min = HMU_MainForm.Prices.Min();
+            int a = HMU_MainForm.Items.Count();
 
             for (int i = 0; i < a; i++)
             {
-                if (Form1.Prices[i] == min)
+                if (HMU_MainForm.Prices[i] == min)
                 {
-                    String minadd = Form1.Items[i] + "\t" + Form1.Amount[i] + "\t" + (Form1.Prices[i] * Form1.Amount[i]).ToString("0.00") + " €" + "\t" + Form1.Categ[i];
+                    String minadd = HMU_MainForm.Items[i] + "\t" + HMU_MainForm.Amount[i] + "\t" + (HMU_MainForm.Prices[i] * HMU_MainForm.Amount[i]).ToString("0.00") + " €" + "\t" + HMU_MainForm.Categ[i];
                     lbShoppingList.Items.Add(minadd);
                 }
             }
@@ -86,15 +86,15 @@ namespace HMU_Project_App
         {
             if (cbShowCateg.SelectedIndex > -1)
             {
-                int a = Form1.Items.Count();
+                int a = HMU_MainForm.Items.Count();
                 int b = cbShowCateg.SelectedIndex;
                 lbShoppingList.Items.Clear();
 
                 for (int i = 0; i < a; i++)
                 {
-                    if (Form1.Categ[i] == Convert.ToString((Categories)b))
+                    if (HMU_MainForm.Categ[i] == Convert.ToString((Categories)b))
                     {
-                        string s = Form1.Items[i] + "\t" + Form1.Amount[i] + "\t" + (Form1.Prices[i] * Form1.Amount[i]).ToString("0.00") + " €" + "\t" + Form1.Categ[i];
+                        string s = HMU_MainForm.Items[i] + "\t" + HMU_MainForm.Amount[i] + "\t" + (HMU_MainForm.Prices[i] * HMU_MainForm.Amount[i]).ToString("0.00") + " €" + "\t" + HMU_MainForm.Categ[i];
                         lbShoppingList.Items.Add(s);
                     }
                 }
@@ -111,18 +111,18 @@ namespace HMU_Project_App
                 string name = tbName.Text;
                 double price = Convert.ToDouble(tbPrice.Text);
                 string categ = Convert.ToString((Categories)i);
-                if (!Form1.Items.Contains(name))
+                if (!HMU_MainForm.Items.Contains(name))
                 {
-                    Form1.Items.Add(name);
-                    Form1.Prices.Add(price);
-                    Form1.Categ.Add(categ);
-                    Form1.Amount.Add(1);
+                    HMU_MainForm.Items.Add(name);
+                    HMU_MainForm.Prices.Add(price);
+                    HMU_MainForm.Categ.Add(categ);
+                    HMU_MainForm.Amount.Add(1);
                     ShoppingList();
                 }
                 else
                 {
-                    int index = Form1.Items.IndexOf(name);
-                    Form1.Amount[index]++;
+                    int index = HMU_MainForm.Items.IndexOf(name);
+                    HMU_MainForm.Amount[index]++;
                     ShoppingList();
                 }
             }
@@ -135,13 +135,13 @@ namespace HMU_Project_App
             if (!string.IsNullOrWhiteSpace(tbName.Text))
             {
                 string name = tbName.Text;
-                int i = Form1.Items.IndexOf(name);
-                if (Form1.Items.Contains(name))
+                int i = HMU_MainForm.Items.IndexOf(name);
+                if (HMU_MainForm.Items.Contains(name))
                 {
-                    Form1.Items.RemoveAt(i);
-                    Form1.Prices.RemoveAt(i);
-                    Form1.Categ.RemoveAt(i);
-                    Form1.Amount.RemoveAt(i);
+                    HMU_MainForm.Items.RemoveAt(i);
+                    HMU_MainForm.Prices.RemoveAt(i);
+                    HMU_MainForm.Categ.RemoveAt(i);
+                    HMU_MainForm.Amount.RemoveAt(i);
                     ShoppingList();
                 }
                 else
@@ -158,10 +158,10 @@ namespace HMU_Project_App
                 if (lbShoppingList.SelectedIndex > -1)
                 {
                     int i = lbShoppingList.SelectedIndex;
-                    Form1.Items.RemoveAt(i);
-                    Form1.Prices.RemoveAt(i);
-                    Form1.Categ.RemoveAt(i);
-                    Form1.Amount.RemoveAt(i);
+                    HMU_MainForm.Items.RemoveAt(i);
+                    HMU_MainForm.Prices.RemoveAt(i);
+                    HMU_MainForm.Categ.RemoveAt(i);
+                    HMU_MainForm.Amount.RemoveAt(i);
                     ShoppingList();
                 }
                 else
@@ -180,7 +180,7 @@ namespace HMU_Project_App
                 if (lbShoppingList.SelectedIndex > -1)
                 {
                     int i = lbShoppingList.SelectedIndex;
-                    Form1.Amount[i]++;
+                    HMU_MainForm.Amount[i]++;
                     ShoppingList();
                 }
                 else
@@ -199,9 +199,9 @@ namespace HMU_Project_App
                 if (lbShoppingList.SelectedIndex > -1)
                 {
                     int i = lbShoppingList.SelectedIndex;
-                    if (Form1.Amount[i] > 1)
+                    if (HMU_MainForm.Amount[i] > 1)
                     {
-                        Form1.Amount[i]--;
+                        HMU_MainForm.Amount[i]--;
                         ShoppingList();
                     }
                     else
@@ -216,11 +216,11 @@ namespace HMU_Project_App
 
         private string GetTotal() //method for calculating the total price of items in the shopping list
         {
-            int a = Form1.Items.Count();
+            int a = HMU_MainForm.Items.Count();
             double total = 0;
             for (int i = 0; i < a; i++)
             {
-                total = total + Form1.Amount[i] * Form1.Prices[i];
+                total = total + HMU_MainForm.Amount[i] * HMU_MainForm.Prices[i];
             }
             return total.ToString("0.00");
             ;

@@ -17,7 +17,7 @@ namespace HMU_Project_App
             InitializeComponent();
         }
 
-
+        /*Add a complaint to the ListComplaints in the main form*/
         private void BtnAddComplaint_Click(object sender, EventArgs e)
         {
             if (tbComplaints.Text != "")
@@ -25,9 +25,9 @@ namespace HMU_Project_App
                 string c = tbComplaints.Text;
                 string d = DateTime.Now.ToString();
 
-                Form1.complaint = new Complaints(d, c);
+                HMU_MainForm.complaint = new Complaints(d, c);
 
-                Form1.ListComplaints.Add(Form1.complaint);
+                HMU_MainForm.ListComplaints.Add(HMU_MainForm.complaint);
 
                 tbComplaints.Text = "";
             }
@@ -37,9 +37,5 @@ namespace HMU_Project_App
             }
         }
 
-        private void TbComplaints_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
