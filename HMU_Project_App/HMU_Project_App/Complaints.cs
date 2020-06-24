@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HMU_Project_App
 {
-    class Complaints
+    public class Complaints
     {
         /* Variables */
         private string complaint;
